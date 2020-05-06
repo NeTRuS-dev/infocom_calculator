@@ -9,17 +9,18 @@
 
     export default {
         name: "baseCalculatorComponent",
-        components: { MainCalculatorComponent },
+        components: {MainCalculatorComponent},
 
     }
 </script>
 
 <style lang="scss" scoped>
-    .calculator-wrapper{
+    .calculator-wrapper {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #abababe0;
     }
 </style>

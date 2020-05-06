@@ -1,21 +1,38 @@
 <template>
-    <div class="display">{{valueToDisplay}}</div>
+    <div class="display">
+        <span>
+            {{valueToDisplay}}
+        </span>
+    </div>
 </template>
 
 <script>
     export default {
         name: "displayComponent",
         props: {
-            valueToDisplay: String
+            valueToDisplay: {
+                required: true,
+                type: String,
+            }
         }
     }
 </script>
 
 <style lang="scss" scoped>
     .display {
-        height: 6rem;
-        width: 80%;
+        margin-bottom: 2rem;
+        height: 5rem;
+        width: 85%;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 0.5rem;
+        background-color: #ababab;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-size: 2rem;
+        }
     }
 </style>
