@@ -4,6 +4,6 @@
 
 $this->title = 'Calculator';
 ?>
-<div class="app_entry">
+<div id="app_entry">
 
 </div>

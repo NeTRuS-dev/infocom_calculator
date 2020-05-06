@@ -1,13 +1,32 @@
 <template>
-    
+    <div @click="buttonPressed">
+    <span>
+        <slot></slot>
+    </span>
+    </div>
 </template>
 
 <script>
     export default {
-        name: "buttonComponent"
+        name: "buttonComponent",
+        props: {
+            buttonName: String
+        },
+        methods: {
+            buttonPressed() {
+                this.$emit('button-pressed', this.buttonName);
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
+    div {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+    }
 </style>

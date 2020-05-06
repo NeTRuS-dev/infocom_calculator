@@ -1,18 +1,29 @@
 <template>
     <div class="calculator">
-
+            <display-component :value-to-display.camel="displayValue"></display-component>
     </div>
 </template>
 
 <script>
+    import DisplayComponent from "@/js/components/displayComponent";
     export default {
-        name: "mainCalculatorComponent"
+        name: "mainCalculatorComponent",
+        data(){
+            return{
+                displayValue:'',
+            }
+        },
+        created() {
+            //TODO fetch memorized
+            //displayValue
+        },
+        components: {DisplayComponent},
     }
 </script>
 
 <style lang="scss" scoped>
     .calculator {
-        width: 50%;
-        height: 50%;
+        width: 20rem;
+        height: 25rem;
     }
 </style>

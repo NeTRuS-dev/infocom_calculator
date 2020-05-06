@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="calculator-wrapper">
         <main-calculator-component></main-calculator-component>
     </div>
 </template>
@@ -15,7 +15,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .wrapper{
+    .calculator-wrapper{
         width: 100%;
         height: 100%;
         display: flex;
