@@ -22,8 +22,8 @@
 
 <style lang="scss" scoped>
     div {
-        height: 2rem;
-        width: 2rem;
+        height: 4rem;
+        width: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;

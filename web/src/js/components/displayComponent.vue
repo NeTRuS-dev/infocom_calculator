@@ -13,7 +13,9 @@
 
 <style lang="scss" scoped>
     .display {
-        height: 3rem;
+        height: 6rem;
         width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
