@@ -1,5 +1,6 @@
 <template>
-    <div :style="{width:buttonWidth+'rem',height:buttonHeight+'rem'}" @click="buttonPressed">
+    <div @select.prevent @mousedown.prevent :style="{width:buttonWidth+'rem',height:buttonHeight+'rem'}"
+         @click="buttonPressed">
     <span>
        <slot></slot>
     </span>
@@ -15,12 +16,12 @@
                 required: true,
             },
             buttonHeight: {
-                type: Number,
-                default: 3,
+                type: String,
+                default: '3',
             },
             buttonWidth: {
-                type: Number,
-                default: 3,
+                type: String,
+                default: '3',
             },
         },
         methods: {

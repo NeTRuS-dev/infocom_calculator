@@ -12611,6 +12611,9 @@ div[data-v-a1543a4c]:hover {
   width: 25rem;
   height: auto;
   background-color: #e5e5e5;
+  -webkit-border-radius: 1%;
+  -moz-border-radius: 1%;
+  border-radius: 1%;
 }
 .calculator .buttons[data-v-24cbfc11] {
   width: 100%;

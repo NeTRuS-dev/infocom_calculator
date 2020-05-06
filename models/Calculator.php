@@ -9,11 +9,13 @@ use yii\base\Model;
 /**
  * @property float $memorizedData usual calculation memory
  * @property float $deeplyMemorizedData memory for M buttons
+ * @property string $memorizedOperation operation in memory
  */
 class Calculator extends Model
 {
     private static string $mem_data_session_key = 'memorized_value';
     private static string $deep_mem_data_session_key = 'deeply_memorized_value';
+    private static string $mem_operation_session_key = 'memorized_operation';
 
 
     public function getMemorizedData(): float
@@ -34,5 +36,16 @@ class Calculator extends Model
     public function setDeeplyMemorizedData(float $val): void
     {
         Yii::$app->session->set(self::$deep_mem_data_session_key, $val);
+    }
+
+    public function getMemorizedOperation(): ?string
+    {
+        return Yii::$app->session->get(self::$mem_operation_session_key);
+    }
+
+    public function setMemorizedOperation(string $operation)
+    {
+        Yii::$app->session->set(self::$mem_operation_session_key, $operation);
+
     }
 }
