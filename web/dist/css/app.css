@@ -12552,5 +12552,32 @@ body,
   height: 100%;
   width: 100%;
 }
+.display[data-v-6e6fd67c] {
+  height: 3rem;
+  width: 80%;
+}
+.calculator[data-v-24cbfc11] {
+  width: 30rem;
+  height: 35rem;
+}
+.calculator-wrapper[data-v-07b5800e] {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
 /*# sourceMappingURL=app.css.map*/

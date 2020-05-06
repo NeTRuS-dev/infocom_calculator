@@ -20,7 +20,6 @@ use app\assets\AppAsset;
     <?php $this->registerCsrfMetaTags() ?>
     <!--    TODO remove this crutch -->
     <link rel="stylesheet" href="/dist/css/app.css">
-    <script src="/dist/js/app.js"></script>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
@@ -32,6 +31,8 @@ use app\assets\AppAsset;
 </div>
 
 <?php $this->endBody() ?>
+<!-- TODO crutch)-->
+<script src="/dist/js/app.js"></script>
 </body>
 </html>
 <?php $this->endPage() ?>

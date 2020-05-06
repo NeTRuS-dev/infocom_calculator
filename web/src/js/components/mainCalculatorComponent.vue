@@ -23,7 +23,7 @@
 
 <style lang="scss" scoped>
     .calculator {
-        width: 20rem;
-        height: 25rem;
+        width: 30rem;
+        height: 35rem;
     }
 </style>

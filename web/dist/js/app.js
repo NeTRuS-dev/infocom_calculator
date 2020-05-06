@@ -86,6 +86,121 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../node_modules/source-map-loader/index.js!./js/components/baseCalculatorComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/babel-loader/lib!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/source-map-loader!./js/components/baseCalculatorComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_components_mainCalculatorComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/mainCalculatorComponent */ "./js/components/mainCalculatorComponent.vue");
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "baseCalculatorComponent",
+  components: {
+    MainCalculatorComponent: _js_components_mainCalculatorComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../node_modules/source-map-loader/index.js!./js/components/displayComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/babel-loader/lib!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/source-map-loader!./js/components/displayComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "displayComponent",
+  props: {
+    valueToDisplay: String
+  }
+});
+
+/***/ }),
+
+/***/ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../node_modules/source-map-loader/index.js!./js/components/mainCalculatorComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/babel-loader/lib!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/source-map-loader!./js/components/mainCalculatorComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_components_displayComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/displayComponent */ "./js/components/displayComponent.vue");
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "mainCalculatorComponent",
+  data: function data() {
+    return {
+      displayValue: ''
+    };
+  },
+  created: function created() {//TODO fetch memorized
+    //displayValue
+  },
+  components: {
+    DisplayComponent: _js_components_displayComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "../../node_modules/mini-css-extract-plugin/dist/loader.js?!../../node_modules/css-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src/index.js?!../../node_modules/resolve-url-loader/index.js?!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/css-loader/dist/cjs.js??ref--6-1!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/loaders/stylePostLoader.js!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/postcss-loader/src??ref--6-2!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/resolve-url-loader??ref--6-3!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/sass-loader/dist/cjs.js??ref--6-4!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!./js/components/baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "../../node_modules/mini-css-extract-plugin/dist/loader.js?!../../node_modules/css-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src/index.js?!../../node_modules/resolve-url-loader/index.js?!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/css-loader/dist/cjs.js??ref--6-1!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/loaders/stylePostLoader.js!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/postcss-loader/src??ref--6-2!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/resolve-url-loader??ref--6-3!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/sass-loader/dist/cjs.js??ref--6-4!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!./js/components/displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "../../node_modules/mini-css-extract-plugin/dist/loader.js?!../../node_modules/css-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src/index.js?!../../node_modules/resolve-url-loader/index.js?!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/css-loader/dist/cjs.js??ref--6-1!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/loaders/stylePostLoader.js!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/postcss-loader/src??ref--6-2!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/resolve-url-loader??ref--6-3!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/sass-loader/dist/cjs.js??ref--6-4!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!./js/components/mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "../../node_modules/process/browser.js":
 /*!*******************************************************************************************!*\
   !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/process/browser.js ***!
@@ -551,6 +666,202 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (this && this.clearImmediate);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "../../node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!./js/components/baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "calculator-wrapper" },
+    [_c("main-calculator-component")],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!./js/components/displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "display" }, [
+    _vm._v(_vm._s(_vm.valueToDisplay))
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib??vue-loader-options!./js/components/mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "calculator" },
+    [_c("display-component", { attrs: { valueToDisplay: _vm.displayValue } })],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "../../node_modules/vue-loader/lib/runtime/componentNormalizer.js":
+/*!**********************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functional component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
 
 /***/ }),
 
@@ -12591,12 +12902,277 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/scss/styles.scss */ "./scss/styles.scss");
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "../../node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var _js_components_baseCalculatorComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/baseCalculatorComponent */ "./js/components/baseCalculatorComponent.vue");
+
 
 
 new vue__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  el: '#app_entry',
-  template: "<baseCalculatorComponent>\n            </baseCalculatorComponent>"
-});
+  template: "\n        <base-calculator-component>\n        </base-calculator-component>",
+  components: {
+    BaseCalculatorComponent: _js_components_baseCalculatorComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+}).$mount('#app_entry');
+
+/***/ }),
+
+/***/ "./js/components/baseCalculatorComponent.vue":
+/*!***************************************************!*\
+  !*** ./js/components/baseCalculatorComponent.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _baseCalculatorComponent_vue_vue_type_template_id_07b5800e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true& */ "./js/components/baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true&");
+/* harmony import */ var _baseCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./baseCalculatorComponent.vue?vue&type=script&lang=js& */ "./js/components/baseCalculatorComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true& */ "./js/components/baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "../../node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _baseCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _baseCalculatorComponent_vue_vue_type_template_id_07b5800e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _baseCalculatorComponent_vue_vue_type_template_id_07b5800e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "07b5800e",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "js/components/baseCalculatorComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./js/components/baseCalculatorComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./js/components/baseCalculatorComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_node_modules_source_map_loader_index_js_baseCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib!../../../../node_modules/vue-loader/lib??vue-loader-options!../../../../node_modules/source-map-loader!./baseCalculatorComponent.vue?vue&type=script&lang=js& */ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../node_modules/source-map-loader/index.js!./js/components/baseCalculatorComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_node_modules_source_map_loader_index_js_baseCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./js/components/baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true&":
+/*!*************************************************************************************************************!*\
+  !*** ./js/components/baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!../../../../node_modules/css-loader/dist/cjs.js??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/resolve-url-loader??ref--6-3!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-4!../../../../node_modules/vue-loader/lib??vue-loader-options!./baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true& */ "../../node_modules/mini-css-extract-plugin/dist/loader.js?!../../node_modules/css-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src/index.js?!../../node_modules/resolve-url-loader/index.js?!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/baseCalculatorComponent.vue?vue&type=style&index=0&id=07b5800e&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_style_index_0_id_07b5800e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./js/components/baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./js/components/baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_template_id_07b5800e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true& */ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/baseCalculatorComponent.vue?vue&type=template&id=07b5800e&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_template_id_07b5800e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_baseCalculatorComponent_vue_vue_type_template_id_07b5800e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./js/components/displayComponent.vue":
+/*!********************************************!*\
+  !*** ./js/components/displayComponent.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _displayComponent_vue_vue_type_template_id_6e6fd67c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true& */ "./js/components/displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true&");
+/* harmony import */ var _displayComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayComponent.vue?vue&type=script&lang=js& */ "./js/components/displayComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true& */ "./js/components/displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "../../node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _displayComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _displayComponent_vue_vue_type_template_id_6e6fd67c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _displayComponent_vue_vue_type_template_id_6e6fd67c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6e6fd67c",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "js/components/displayComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./js/components/displayComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./js/components/displayComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_node_modules_source_map_loader_index_js_displayComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib!../../../../node_modules/vue-loader/lib??vue-loader-options!../../../../node_modules/source-map-loader!./displayComponent.vue?vue&type=script&lang=js& */ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../node_modules/source-map-loader/index.js!./js/components/displayComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_node_modules_source_map_loader_index_js_displayComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./js/components/displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./js/components/displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true& ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!../../../../node_modules/css-loader/dist/cjs.js??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/resolve-url-loader??ref--6-3!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-4!../../../../node_modules/vue-loader/lib??vue-loader-options!./displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true& */ "../../node_modules/mini-css-extract-plugin/dist/loader.js?!../../node_modules/css-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src/index.js?!../../node_modules/resolve-url-loader/index.js?!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/displayComponent.vue?vue&type=style&index=0&id=6e6fd67c&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_style_index_0_id_6e6fd67c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./js/components/displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true&":
+/*!***************************************************************************************!*\
+  !*** ./js/components/displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_template_id_6e6fd67c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true& */ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/displayComponent.vue?vue&type=template&id=6e6fd67c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_template_id_6e6fd67c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_displayComponent_vue_vue_type_template_id_6e6fd67c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./js/components/mainCalculatorComponent.vue":
+/*!***************************************************!*\
+  !*** ./js/components/mainCalculatorComponent.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mainCalculatorComponent_vue_vue_type_template_id_24cbfc11_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true& */ "./js/components/mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true&");
+/* harmony import */ var _mainCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mainCalculatorComponent.vue?vue&type=script&lang=js& */ "./js/components/mainCalculatorComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true& */ "./js/components/mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "../../node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _mainCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _mainCalculatorComponent_vue_vue_type_template_id_24cbfc11_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _mainCalculatorComponent_vue_vue_type_template_id_24cbfc11_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "24cbfc11",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "js/components/mainCalculatorComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./js/components/mainCalculatorComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./js/components/mainCalculatorComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_node_modules_source_map_loader_index_js_mainCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib!../../../../node_modules/vue-loader/lib??vue-loader-options!../../../../node_modules/source-map-loader!./mainCalculatorComponent.vue?vue&type=script&lang=js& */ "../../node_modules/babel-loader/lib/index.js!../../node_modules/vue-loader/lib/index.js?!../../node_modules/source-map-loader/index.js!./js/components/mainCalculatorComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_node_modules_source_map_loader_index_js_mainCalculatorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./js/components/mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true&":
+/*!*************************************************************************************************************!*\
+  !*** ./js/components/mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!../../../../node_modules/css-loader/dist/cjs.js??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/resolve-url-loader??ref--6-3!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-4!../../../../node_modules/vue-loader/lib??vue-loader-options!./mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true& */ "../../node_modules/mini-css-extract-plugin/dist/loader.js?!../../node_modules/css-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/postcss-loader/src/index.js?!../../node_modules/resolve-url-loader/index.js?!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/mainCalculatorComponent.vue?vue&type=style&index=0&id=24cbfc11&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_0_node_modules_css_loader_dist_cjs_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_resolve_url_loader_index_js_ref_6_3_node_modules_sass_loader_dist_cjs_js_ref_6_4_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_style_index_0_id_24cbfc11_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./js/components/mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./js/components/mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_template_id_24cbfc11_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true& */ "../../node_modules/vue-loader/lib/loaders/templateLoader.js?!../../node_modules/vue-loader/lib/index.js?!./js/components/mainCalculatorComponent.vue?vue&type=template&id=24cbfc11&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_template_id_24cbfc11_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mainCalculatorComponent_vue_vue_type_template_id_24cbfc11_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

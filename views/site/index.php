@@ -5,5 +5,4 @@
 $this->title = 'Calculator';
 ?>
 <div id="app_entry">
-
 </div>
