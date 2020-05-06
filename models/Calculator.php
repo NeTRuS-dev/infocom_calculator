@@ -15,6 +15,7 @@ class Calculator extends Model
     private static string $mem_data_session_key = 'memorized_value';
     private static string $deep_mem_data_session_key = 'deeply_memorized_value';
 
+
     public function getMemorizedData(): float
     {
         return Yii::$app->session->get(self::$mem_data_session_key) ?? 0;
@@ -24,6 +25,7 @@ class Calculator extends Model
     {
         Yii::$app->session->set(self::$mem_data_session_key, $val);
     }
+
     public function getDeeplyMemorizedData(): float
     {
         return Yii::$app->session->get(self::$deep_mem_data_session_key) ?? 0;
