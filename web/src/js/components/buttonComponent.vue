@@ -1,7 +1,7 @@
 <template>
-    <div @click="buttonPressed">
+    <div :style="{width:buttonWidth+'rem',height:buttonHeight+'rem'}" @click="buttonPressed">
     <span>
-        <slot></slot>
+        {{buttonName}}
     </span>
     </div>
 </template>
@@ -10,7 +10,18 @@
     export default {
         name: "buttonComponent",
         props: {
-            buttonName: String
+            buttonName: {
+                type: String,
+                required: true,
+            },
+            buttonHeight: {
+                type: Number,
+                default: 4,
+            },
+            buttonWidth: {
+                type: Number,
+                default: 4,
+            },
         },
         methods: {
             buttonPressed() {
@@ -22,8 +33,6 @@
 
 <style lang="scss" scoped>
     div {
-        height: 4rem;
-        width: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;
