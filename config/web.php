@@ -1,12 +1,20 @@
 <?php
 
+use yii\filters\Cors;
+use yii\web\GroupUrlRule;
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'corsFilter' => [
+            'class' => Cors::class,
+        ]
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
@@ -41,7 +49,13 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => true,
             'rules' => [
-                'GET ' => 'site/index'
+                'GET ' => 'site/index',
+                new GroupUrlRule([
+                    'prefix' => 'api',
+                    'rules' => [
+                        'POST evaluate' => 'ajax/evaluate',
+                    ],
+                ])
             ],
         ],
 
