@@ -1,6 +1,6 @@
 <template>
     <div class="calculator">
-        <display-component :value-to-display="computedValueToDisplay" :memorized-display="memorizedDisplayValues"></display-component>
+        <display-component :value-to-display="computedValueToDisplay" :memorized-display="computedMemorizedDisplayValues"></display-component>
         <div class="buttons">
             <div class="d-flex justify-content-between mb-2 mt-2">
                 <button-component @button-pressed="memoryOperationButtonPressedHandler" button-name="MC">MC
@@ -106,13 +106,17 @@
              * but doesn't display that
              */
             computedValueToDisplay() {
-                //TODO display memorized
                 return `${this.displayValue.slice(0, 18)}`;
+            },
+            computedMemorizedDisplayValues(){
+                //TODO fix symbols
+                let [leftValue, operation]= this.memorizedDisplayValues.split(' ')
+                console.log(leftValue)
+                console.log(operation)
+                return this.memorizedDisplayValues
             }
         },
         created() {
-            //displayValue
-            // this.memoryOperationButtonPressedHandler('MR');
             this.clearMemory(true);
         },
         methods: {
