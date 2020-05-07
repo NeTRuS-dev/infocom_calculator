@@ -3,6 +3,7 @@
 
 namespace app\models;
 
+use app\models\operations\Operation;
 use Yii;
 use yii\base\Model;
 

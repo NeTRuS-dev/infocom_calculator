@@ -3,10 +3,10 @@
 
 namespace app\controllers;
 
-use app\models\BinaryOperation;
 use app\models\Calculator;
-use app\models\MemoryOperation;
-use app\models\UnaryOperation;
+use app\models\operations\BinaryOperation;
+use app\models\operations\MemoryOperation;
+use app\models\operations\UnaryOperation;
 use Yii;
 use yii\filters\Cors;
 use yii\web\Controller;
