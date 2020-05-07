@@ -329,7 +329,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     //displayValue
-    this.memoryOperationButtonPressedHandler('MR');
+    // this.memoryOperationButtonPressedHandler('MR');
+    this.clearMemory(true);
   },
   methods: {
     unaryOperationButtonPressedHandler: function unaryOperationButtonPressedHandler(data) {
@@ -365,7 +366,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        var nestedData;
+        var nestedData, tmp;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -384,9 +385,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this2.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_8__["binaryOperationUrl"], nestedData);
 
               case 5:
-                _this2.memorizedDisplayValues = _context2.sent.resultValue;
+                tmp = _context2.sent.resultValue;
 
-              case 6:
+                if (data === 'evaluate') {
+                  _this2.displayValue = tmp;
+                  _this2.memorizedDisplayValues = '';
+                  _this2.inputFromStart = true;
+                  _this2.previousInputWasANumber = false;
+                } else {
+                  _this2.memorizedDisplayValues = tmp;
+                }
+
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -422,43 +432,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee3);
       }))();
     },
-    evaluateHandler: function evaluateHandler() {//TODO send eval request
+    clearMemory: function clearMemory() {
+      var _arguments = arguments,
+          _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+        var fullClean;
         return regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
-    },
-    clearMemory: function clearMemory() {
-      var _this4 = this;
+                fullClean = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : false;
+                _context4.next = 3;
+                return _this4.dataProvider.receiveResponseData("".concat(_js_config__WEBPACK_IMPORTED_MODULE_8__["clearMemoryUrl"]).concat(fullClean ? '?full=true' : ''));
 
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                _context5.next = 2;
-                return _this4.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_8__["clearMemoryUrl"]);
-
-              case 2:
+              case 3:
                 _this4.displayValue = '0';
                 _this4.memorizedDisplayValues = '';
                 _this4.inputFromStart = true;
                 _this4.previousInputWasANumber = false;
 
-              case 6:
+              case 7:
               case "end":
-                return _context5.stop();
+                return _context4.stop();
             }
           }
-        }, _callee5);
+        }, _callee4);
       }))();
     },
 
@@ -4843,7 +4842,9 @@ var render = function() {
               "button-component",
               {
                 attrs: { "button-width": "14", "button-name": "evaluate" },
-                on: { "button-pressed": _vm.evaluateHandler }
+                on: {
+                  "button-pressed": _vm.binaryOperationButtonPressedHandler
+                }
               },
               [_vm._v("=\n            ")]
             ),
@@ -4852,7 +4853,11 @@ var render = function() {
               "button-component",
               {
                 attrs: { "button-name": "clearMem" },
-                on: { "button-pressed": _vm.clearMemory }
+                on: {
+                  "button-pressed": function($event) {
+                    return _vm.clearMemory()
+                  }
+                }
               },
               [_vm._v("CE\n            ")]
             )
@@ -17497,12 +17502,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************!*\
   !*** ./js/config.js ***!
   \**********************/
-/*! exports provided: evalUrl, clearMemoryUrl, unaryOperationUrl, binaryOperationUrl, memoryOperationUrl */
+/*! exports provided: clearMemoryUrl, unaryOperationUrl, binaryOperationUrl, memoryOperationUrl */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "evalUrl", function() { return evalUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearMemoryUrl", function() { return clearMemoryUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unaryOperationUrl", function() { return unaryOperationUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "binaryOperationUrl", function() { return binaryOperationUrl; });

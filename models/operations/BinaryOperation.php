@@ -23,12 +23,17 @@ class BinaryOperation extends Operation
 
     public function executeOperation(): string
     {
-        // TODO: Implement executeOperation() method.
         if (!$this->validate()) {
             return '';
         } else {
             if ($this->rightValue) {
-                $this->calculatorInstance->memorizedData = $this->makeCalc($this->calculatorInstance->memorizedData, $this->calculatorInstance->memorizedOperation, $this->rightValue);
+                $tmp = strval($this->makeCalc($this->calculatorInstance->memorizedData, $this->calculatorInstance->memorizedOperation, floatval($this->rightValue)));
+                if ($this->operation === EvalTypes::evaluate) {
+                    $this->calculatorInstance->unsetMemorizedOperation();
+                    $this->calculatorInstance->unsetMemorizedData();
+                    return "{$tmp}";
+                }
+                $this->calculatorInstance->memorizedData = $tmp;
             }
             $this->calculatorInstance->memorizedOperation = $this->operation;
             return "{$this->calculatorInstance->memorizedData} {$this->calculatorInstance->memorizedOperation}";
@@ -44,19 +49,22 @@ class BinaryOperation extends Operation
         $returnValue = 0;
         switch ($operation) {
             case EvalTypes::add:
-                $returnValue = $this->calculatorInstance->memorizedData + $this->rightValue;
+                $returnValue = $left + $right;
+                break;
+            case EvalTypes::subtract:
+                $returnValue = $left - $right;
                 break;
             case EvalTypes::divide:
-                $returnValue = $this->calculatorInstance->memorizedData / $this->rightValue;
+                $returnValue = $left / $right;
                 break;
             case EvalTypes::mod:
-                $returnValue = $this->calculatorInstance->memorizedData % $this->rightValue;
+                $returnValue = $left % $right;
                 break;
             case EvalTypes::multiply:
-                $returnValue = $this->calculatorInstance->memorizedData * $this->rightValue;
+                $returnValue = $left * $right;
                 break;
             case EvalTypes::pow:
-                $returnValue = $this->calculatorInstance->memorizedData ** $this->rightValue;
+                $returnValue = $left ** $right;
                 break;
         }
         return $returnValue;

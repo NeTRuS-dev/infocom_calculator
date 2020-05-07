@@ -36,7 +36,27 @@ class Calculator extends Model
     {
         if ($this->operation !== null) {
             return ['resultValue' => $this->operation->executeOperation()];
+        } else {
+            return ['resultValue' => ''];
+
         }
+    }
+
+    public function unsetMemorizedData()
+    {
+        Yii::$app->session->remove(self::$mem_data_session_key);
+    }
+
+    public function unsetMemorizedOperation()
+    {
+        Yii::$app->session->remove(self::$mem_operation_session_key);
+
+    }
+
+    public function unsetDeeplyMemorizedData()
+    {
+        Yii::$app->session->remove(self::$deep_mem_data_session_key);
+
     }
 
     public function getMemorizedData(): float
@@ -66,7 +86,10 @@ class Calculator extends Model
 
     public function setMemorizedOperation(string $operation)
     {
-        Yii::$app->session->set(self::$mem_operation_session_key, $operation);
+        if (Calculator::isAllowedOperation($operation)) {
+                Yii::$app->session->set(self::$mem_operation_session_key, $operation);
+
+        }
     }
 
     public static function isAllowedOperation(string $operation): bool

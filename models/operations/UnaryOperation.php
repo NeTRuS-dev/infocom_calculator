@@ -69,6 +69,9 @@ class UnaryOperation extends Operation
             case EvalTypes::tg:
                 $result = tan($value);
                 break;
+            case EvalTypes::negate:
+                $result = -1 * ($value);
+                break;
         }
         return $result;
     }

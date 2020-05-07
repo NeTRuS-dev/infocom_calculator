@@ -51,7 +51,6 @@ $config = [
                 'ajax/evaluate/binary' => 'ajax/evaluate-binary',
                 'ajax/evaluate/memory' => 'ajax/work-with-memory',
                 'ajax/clear' => 'ajax/clear-flash-memory',
-                'ajax/evaluate' => 'ajax/evaluate',
             ],
         ],
 

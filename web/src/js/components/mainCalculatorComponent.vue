@@ -72,11 +72,11 @@
                 <button-component @button-pressed="numericButtonPressed" button-name="reduce"><=</button-component>
             </div>
             <div class="d-flex justify-content-between mb-2 mt-2">
-                <button-component @button-pressed="evaluateHandler"
+                <button-component @button-pressed="binaryOperationButtonPressedHandler"
                                   button-width="14"
                                   button-name="evaluate">=
                 </button-component>
-                <button-component @button-pressed="clearMemory" button-name="clearMem">CE
+                <button-component @button-pressed="clearMemory()" button-name="clearMem">CE
                 </button-component>
             </div>
         </div>
@@ -87,7 +87,7 @@
     import DisplayComponent from "@/js/components/displayComponent";
     import ButtonComponent from "@/js/components/buttonComponent";
     import {DataReceiver} from "@/js/DataReceiver";
-    import {memoryOperationUrl, binaryOperationUrl, unaryOperationUrl, clearMemoryUrl, evalUrl} from "@/js/config";
+    import {memoryOperationUrl, binaryOperationUrl, unaryOperationUrl, clearMemoryUrl} from "@/js/config";
 
     export default {
         name: "mainCalculatorComponent",
@@ -112,7 +112,8 @@
         },
         created() {
             //displayValue
-            this.memoryOperationButtonPressedHandler('MR');
+            // this.memoryOperationButtonPressedHandler('MR');
+            this.clearMemory(true);
         },
         methods: {
             async unaryOperationButtonPressedHandler(data) {
@@ -134,7 +135,15 @@
                     this.previousInputWasANumber = false;
                     nestedData.rightValue = this.displayValue
                 }
-                this.memorizedDisplayValues = (await this.dataProvider.receiveResponseData(binaryOperationUrl, nestedData)).resultValue
+                let tmp = (await this.dataProvider.receiveResponseData(binaryOperationUrl, nestedData)).resultValue
+                if (data === 'evaluate') {
+                    this.displayValue = tmp;
+                    this.memorizedDisplayValues = '';
+                    this.inputFromStart = true;
+                    this.previousInputWasANumber = false
+                } else {
+                    this.memorizedDisplayValues = tmp;
+                }
             },
             async memoryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
@@ -144,11 +153,8 @@
                 }
                 this.displayValue = (await this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData)).resultValue
             },
-            async evaluateHandler() {
-                //TODO send eval request
-            },
-            async clearMemory() {
-                await this.dataProvider.receiveResponseData(clearMemoryUrl)
+            async clearMemory(fullClean = false) {
+                await this.dataProvider.receiveResponseData(`${clearMemoryUrl}${fullClean ? '?full=true' : ''}`)
                 this.displayValue = '0'
                 this.memorizedDisplayValues = ''
                 this.inputFromStart = true;

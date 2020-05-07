@@ -29,5 +29,6 @@ class EvalTypes
     const multiply = "multiply";
     const add = "add";
     const negate = "negate";
+    const subtract = "subtract";
     const evaluate = "evaluate";
 }

@@ -61,14 +61,12 @@ class AjaxController extends Controller
     public function actionClearFlashMemory()
     {
         $calc = new Calculator();
-        $calc->deeplyMemorizedData = 0;
-        $calc->memorizedOperation = EvalTypes::add;
-
+        $calc->unsetMemorizedData();
+        $calc->unsetMemorizedOperation();
+        if (Yii::$app->request->getQueryParam('full') !== null) {
+            $calc->unsetDeeplyMemorizedData();
+        }
     }
 
-    public function actionEvaluate()
-    {
-        //TODO evaluate action
-    }
 
 }
