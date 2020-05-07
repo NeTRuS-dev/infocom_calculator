@@ -17,10 +17,12 @@ class Calculator extends Model
     private static string $deep_mem_data_session_key = 'deeply_memorized_value';
     private static string $mem_operation_session_key = 'memorized_operation';
 
-    public function __construct()
+    private Operation $operation;
+
+    public function __construct(Operation $operation)
     {
         parent::__construct();
-
+        $this->operation = $operation;
     }
 
 
