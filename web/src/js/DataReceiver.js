@@ -1,5 +1,5 @@
 export class DataReceiver {
-    async receiveResponse(url, body, method = 'POST') {
+    async receiveResponseData(url, body, method = 'POST') {
         let csrfParam = document.querySelector('meta[name="csrf-param"]').content
         body[csrfParam] = document.querySelector('meta[name="csrf-token"]').content
         let response = await fetch(url, {

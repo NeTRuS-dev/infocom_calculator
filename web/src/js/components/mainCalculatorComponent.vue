@@ -92,8 +92,8 @@
         data() {
             return {
                 displayValue: '',
-                isOperationSelection: false,
-                dataProvider: new DataReceiver()
+                dataProvider: new DataReceiver(),
+                inputFromStart: false,
             }
         },
         computed: {
@@ -106,36 +106,46 @@
             }
         },
         created() {
-            //TODO fetch memorized
             //displayValue
+            this.memoryOperationButtonPressedHandler('MR');
         },
         methods: {
             unaryOperationButtonPressedHandler(data) {
+                this.inputFromStart = true;
                 //TODO send data update
 
             },
             binaryOperationButtonPressedHandler(data) {
-                //TODO send data update
-                if (!this.isOperationSelection) {
-
-                }
-            },
-            memoryOperationButtonPressedHandler(data) {
+                this.inputFromStart = true;
                 let nestedData = {
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponse(memoryOperationUrl, nestedData).newDisplayValue
+                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).newDisplayValue
+
+                //TODO send data update
+
+            },
+            memoryOperationButtonPressedHandler(data) {
+                this.inputFromStart = true;
+                let nestedData = {
+                    operation: data,
+                    rightValue: this.displayValue
+                }
+                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).newDisplayValue
             },
             /**
              *  input via ajax is a pervert idea
              */
             numericButtonPressed(number) {
-                this.isOperationSelection=false;
+                if (this.inputFromStart) {
+                    this.displayValue = ''
+                    this.inputFromStart = false
+                }
                 if (number === 'reduce') {
                     this.displayValue = this.displayValue.slice(0, -1)
                 } else {
-                    this.displayValue += number === 'dot' ? '.' : number;
+                    this.displayValue += number === 'dot' ? '.' : number
                 }
             }
         },
