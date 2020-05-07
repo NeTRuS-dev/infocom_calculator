@@ -55,14 +55,21 @@ class Calculator extends Model
         Yii::$app->session->set(self::$deep_mem_data_session_key, strval($val));
     }
 
-    public function getMemorizedOperation(): ?string
+    public function getMemorizedOperation(): string
     {
-        return Yii::$app->session->get(self::$mem_operation_session_key);
+        return Yii::$app->session->get(self::$mem_operation_session_key) ?? EvalTypes::add;
     }
 
     public function setMemorizedOperation(string $operation)
     {
-        Yii::$app->session->set(self::$mem_operation_session_key, $operation);
+        if ($this->isAllowedOperation($operation)) {
+            Yii::$app->session->set(self::$mem_operation_session_key, $operation);
+        }
+    }
 
+    public function isAllowedOperation(string $operation): bool
+    {
+        $reflTypesClass = new \ReflectionClass(EvalTypes::class);
+        return array_key_exists($operation, array_flip($reflTypesClass->getConstants()));
     }
 }

@@ -4,7 +4,6 @@
 namespace app\models\operations;
 
 
-
 class UnaryOperation extends Operation
 {
     /**
@@ -17,13 +16,12 @@ class UnaryOperation extends Operation
         $this->attributes = $data;
     }
 
-    public function executeOperation():string
+    public function executeOperation(): string
     {
         // TODO: Implement executeOperation() method.
-        if(!$this->validate()){
+        if (!$this->validate()) {
             return '';
-        }
-        else{
+        } else {
 
         }
     }
