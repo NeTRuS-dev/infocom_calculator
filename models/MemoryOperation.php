@@ -29,14 +29,36 @@ class MemoryOperation extends Operation
         ]);
     }
 
-    public function executeOperation():string
+    public function executeOperation(): string
     {
         // TODO: Implement executeOperation() method.
-        if(!$this->validate()){
+        if (!$this->validate()) {
             return '';
-        }
-        else{
-
+        } else {
+            /**
+             * @var string $result
+             */
+            $result = '';
+            switch ($this->operation) {
+                case EvalTypes::M_clear:
+                    $this->calculatorInstance->deeplyMemorizedData = 0;
+                    break;
+                case EvalTypes::M_read:
+                    $result = $this->calculatorInstance->deeplyMemorizedData;
+                    break;
+                case EvalTypes::M_add:
+                    $tmp = $this->calculatorInstance->deeplyMemorizedData;
+                    $tmp += floatval($this->rightValue);
+                    $this->calculatorInstance->deeplyMemorizedData = $tmp;
+                    break;
+                case EvalTypes::M_sub:
+                    $tmp = $this->calculatorInstance->deeplyMemorizedData;
+                    $tmp -= floatval($this->rightValue);
+                    $this->calculatorInstance->deeplyMemorizedData = $tmp;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

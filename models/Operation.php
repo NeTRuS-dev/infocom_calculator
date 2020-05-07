@@ -23,7 +23,7 @@ abstract class Operation extends Model
         ];
     }
 
-    public abstract function executeOperation():string;
+    public abstract function executeOperation(): string;
 
     /**
      * @param Calculator $calculatorInstance

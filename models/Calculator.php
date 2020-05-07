@@ -36,22 +36,22 @@ class Calculator extends Model
 
     public function getMemorizedData(): float
     {
-        return Yii::$app->session->get(self::$mem_data_session_key) ?? 0;
+        return floatval(Yii::$app->session->get(self::$mem_data_session_key) ?? 0);
     }
 
     public function setMemorizedData(float $val): void
     {
-        Yii::$app->session->set(self::$mem_data_session_key, $val);
+        Yii::$app->session->set(self::$mem_data_session_key, strval($val));
     }
 
     public function getDeeplyMemorizedData(): float
     {
-        return Yii::$app->session->get(self::$deep_mem_data_session_key) ?? 0;
+        return floatval(Yii::$app->session->get(self::$deep_mem_data_session_key) ?? 0);
     }
 
     public function setDeeplyMemorizedData(float $val): void
     {
-        Yii::$app->session->set(self::$deep_mem_data_session_key, $val);
+        Yii::$app->session->set(self::$deep_mem_data_session_key, strval($val));
     }
 
     public function getMemorizedOperation(): ?string
