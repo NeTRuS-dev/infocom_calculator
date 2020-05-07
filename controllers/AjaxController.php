@@ -61,7 +61,7 @@ class AjaxController extends Controller
     public function actionClearFlashMemory()
     {
         $calc = new Calculator();
-        $calc->memorizedData = 0;
+        $calc->deeplyMemorizedData = 0;
         $calc->memorizedOperation = EvalTypes::add;
 
     }

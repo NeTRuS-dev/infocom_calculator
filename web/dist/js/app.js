@@ -197,11 +197,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_array_concat__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var core_js_modules_es_array_slice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.slice */ "../../node_modules/core-js/modules/es.array.slice.js");
 /* harmony import */ var core_js_modules_es_array_slice__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_components_displayComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/displayComponent */ "./js/components/displayComponent.vue");
-/* harmony import */ var _js_components_buttonComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/buttonComponent */ "./js/components/buttonComponent.vue");
-/* harmony import */ var _js_DataReceiver__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/DataReceiver */ "./js/DataReceiver.js");
-/* harmony import */ var _js_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/js/config */ "./js/config.js");
+/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string */ "../../node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_promise__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.promise */ "../../node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! regenerator-runtime/runtime */ "../../node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _js_components_displayComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/js/components/displayComponent */ "./js/components/displayComponent.vue");
+/* harmony import */ var _js_components_buttonComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/js/components/buttonComponent */ "./js/components/buttonComponent.vue");
+/* harmony import */ var _js_DataReceiver__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/js/DataReceiver */ "./js/DataReceiver.js");
+/* harmony import */ var _js_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/js/config */ "./js/config.js");
 
+
+
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 //
 //
@@ -298,7 +312,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       displayValue: '0',
       memorizedDisplayValues: '',
-      dataProvider: new _js_DataReceiver__WEBPACK_IMPORTED_MODULE_4__["DataReceiver"](),
+      dataProvider: new _js_DataReceiver__WEBPACK_IMPORTED_MODULE_7__["DataReceiver"](),
       inputFromStart: false,
       previousInputWasANumber: false
     };
@@ -319,43 +333,133 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     unaryOperationButtonPressedHandler: function unaryOperationButtonPressedHandler(data) {
-      this.inputFromStart = true; //TODO send data update
+      var _this = this;
 
-      var nestedData = {
-        operation: data,
-        rightValue: this.displayValue
-      };
-      this.displayValue = this.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_5__["unaryOperationUrl"], nestedData).resultValue || '0';
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var nestedData;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.inputFromStart = true; //TODO send data update
+
+                nestedData = {
+                  operation: data,
+                  rightValue: _this.displayValue
+                };
+                _context.next = 4;
+                return _this.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_8__["unaryOperationUrl"], nestedData);
+
+              case 4:
+                _this.displayValue = _context.sent.resultValue;
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     },
     binaryOperationButtonPressedHandler: function binaryOperationButtonPressedHandler(data) {
-      this.inputFromStart = true;
-      var nestedData = {
-        operation: data
-      };
+      var _this2 = this;
 
-      if (this.previousInputWasANumber) {
-        this.previousInputWasANumber = false;
-        nestedData.rightValue = this.displayValue;
-      }
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        var nestedData;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this2.inputFromStart = true;
+                nestedData = {
+                  operation: data
+                };
 
-      this.memorizedDisplayValues = this.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_5__["binaryOperationUrl"], nestedData).resultValue || '';
+                if (_this2.previousInputWasANumber) {
+                  _this2.previousInputWasANumber = false;
+                  nestedData.rightValue = _this2.displayValue;
+                }
+
+                _context2.next = 5;
+                return _this2.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_8__["binaryOperationUrl"], nestedData);
+
+              case 5:
+                _this2.memorizedDisplayValues = _context2.sent.resultValue;
+
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     },
     memoryOperationButtonPressedHandler: function memoryOperationButtonPressedHandler(data) {
-      this.inputFromStart = true;
-      var nestedData = {
-        operation: data,
-        rightValue: this.displayValue
-      };
-      this.displayValue = this.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_5__["memoryOperationUrl"], nestedData).resultValue || '0';
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+        var nestedData;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this3.inputFromStart = true;
+                nestedData = {
+                  operation: data,
+                  rightValue: _this3.displayValue
+                };
+                _context3.next = 4;
+                return _this3.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_8__["memoryOperationUrl"], nestedData);
+
+              case 4:
+                _this3.displayValue = _context3.sent.resultValue;
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     },
     evaluateHandler: function evaluateHandler() {//TODO send eval request
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
     },
     clearMemory: function clearMemory() {
-      this.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_5__["clearMemoryUrl"]);
-      this.displayValue = '0';
-      this.memorizedDisplayValues = '';
-      this.inputFromStart = true;
-      this.previousInputWasANumber = false;
+      var _this4 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return _this4.dataProvider.receiveResponseData(_js_config__WEBPACK_IMPORTED_MODULE_8__["clearMemoryUrl"]);
+
+              case 2:
+                _this4.displayValue = '0';
+                _this4.memorizedDisplayValues = '';
+                _this4.inputFromStart = true;
+                _this4.previousInputWasANumber = false;
+
+              case 6:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }))();
     },
 
     /**
@@ -377,8 +481,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    ButtonComponent: _js_components_buttonComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
-    DisplayComponent: _js_components_displayComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+    ButtonComponent: _js_components_buttonComponent__WEBPACK_IMPORTED_MODULE_6__["default"],
+    DisplayComponent: _js_components_displayComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 

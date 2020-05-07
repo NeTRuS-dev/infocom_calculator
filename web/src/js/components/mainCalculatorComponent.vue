@@ -115,16 +115,16 @@
             this.memoryOperationButtonPressedHandler('MR');
         },
         methods: {
-            unaryOperationButtonPressedHandler(data) {
+            async unaryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
                 //TODO send data update
                 let nestedData = {
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponseData(unaryOperationUrl, nestedData).resultValue || '0'
+                this.displayValue = (await this.dataProvider.receiveResponseData(unaryOperationUrl, nestedData)).resultValue
             },
-            binaryOperationButtonPressedHandler(data) {
+            async binaryOperationButtonPressedHandler(data) {
 
                 this.inputFromStart = true;
                 let nestedData = {
@@ -134,21 +134,21 @@
                     this.previousInputWasANumber = false;
                     nestedData.rightValue = this.displayValue
                 }
-                this.memorizedDisplayValues = this.dataProvider.receiveResponseData(binaryOperationUrl, nestedData).resultValue || ''
+                this.memorizedDisplayValues = (await this.dataProvider.receiveResponseData(binaryOperationUrl, nestedData)).resultValue
             },
-            memoryOperationButtonPressedHandler(data) {
+            async memoryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
                 let nestedData = {
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue || '0'
+                this.displayValue = (await this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData)).resultValue
             },
-            evaluateHandler() {
+            async evaluateHandler() {
                 //TODO send eval request
             },
-            clearMemory() {
-                this.dataProvider.receiveResponseData(clearMemoryUrl)
+            async clearMemory() {
+                await this.dataProvider.receiveResponseData(clearMemoryUrl)
                 this.displayValue = '0'
                 this.memorizedDisplayValues = ''
                 this.inputFromStart = true;
