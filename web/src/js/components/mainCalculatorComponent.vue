@@ -102,6 +102,7 @@
              * but doesn't display that
              */
             computedValueToDisplay() {
+                //TODO display memorized
                 return this.displayValue.slice(0, 18);
             }
         },
