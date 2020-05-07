@@ -26,12 +26,18 @@ class AjaxController extends Controller
     }
     public function actionEvaluateUnary(){
         //TODO write the body
+        $data=Yii::$app->request->post();
+
     }
     public function actionEvaluateBinary(){
         //TODO write the body
+        $data=Yii::$app->request->post();
+
     }
     public function actionWorkWithMemory(){
         //TODO write the body
+        $data=Yii::$app->request->post();
+
     }
 
 }

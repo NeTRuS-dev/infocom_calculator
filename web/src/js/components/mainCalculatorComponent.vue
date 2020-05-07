@@ -85,6 +85,7 @@
     import DisplayComponent from "@/js/components/displayComponent";
     import ButtonComponent from "@/js/components/buttonComponent";
     import {DataReceiver} from "@/js/DataReceiver";
+    import {memoryOperationUrl} from "@/js/config";
 
     export default {
         name: "mainCalculatorComponent",
@@ -118,7 +119,8 @@
             },
             memoryOperationButtonPressedHandler(data) {
                 //TODO send data update
-
+                let nestedData=
+                this.dataProvider.receiveResponse(memoryOperationUrl,)
             },
             /**
              *  input via ajax is a pervert idea
