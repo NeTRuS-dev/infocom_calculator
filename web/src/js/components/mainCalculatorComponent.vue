@@ -147,36 +147,30 @@
             evaluateHandler() {
                 //TODO send eval request
             },
+            clearMemory() {
+                this.dataProvider.receiveResponseData(clearMemoryUrl)
+                this.displayValue = '0'
+                this.memorizedDisplayValues = ''
+                this.inputFromStart = true;
+                this.previousInputWasANumber = false
+            },
+            /**
+             *  input via ajax is a pervert idea
+             */
+            numericButtonPressed(number) {
+                this.previousInputWasANumber = true
+                if (this.inputFromStart) {
+                    this.displayValue = ''
+                    this.inputFromStart = false
+                }
+                if (number === 'reduce') {
+                    this.displayValue = this.displayValue.slice(0, -1)
+                } else {
+                    this.displayValue += number === 'dot' ? '.' : number
+                }
+            },
         },
-        clearMemory() {
-            this.dataProvider.receiveResponseData(clearMemoryUrl)
-            this.displayValue = '0'
-            this.memorizedDisplayValues = ''
-            this.inputFromStart = true;
-            this.previousInputWasANumber = false
-
-        },
-        /**
-         *  input via ajax is a pervert idea
-         */
-        numericButtonPressed(number) {
-            this.previousInputWasANumber = true
-            if (this.inputFromStart) {
-                this.displayValue = ''
-                this.inputFromStart = false
-            }
-            if (number === 'reduce') {
-                this.displayValue = this.displayValue.slice(0, -1)
-            } else {
-                this.displayValue += number === 'dot' ? '.' : number
-            }
-        }
-    }
-    ,
-    components: {
-        ButtonComponent, DisplayComponent
-    }
-    ,
+        components: {ButtonComponent, DisplayComponent},
     }
 </script>
 
