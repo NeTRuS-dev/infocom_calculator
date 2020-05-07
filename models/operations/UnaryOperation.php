@@ -17,8 +17,9 @@ class UnaryOperation extends Operation
      */
     public function __construct(array $data)
     {
-        parent::__construct();
-        $this->attributes = $data;
+        parent::__construct($data);
+        $this->rightValue = $data['rightValue'];
+
     }
 
     public function rules()

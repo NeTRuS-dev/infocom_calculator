@@ -14,16 +14,22 @@ use yii\base\Model;
  */
 abstract class Operation extends Model
 {
-    private string $_operation;
-    private Calculator $_calculatorInstance;
+    protected string $_operation;
+    protected Calculator $_calculatorInstance;
+
+    public function __construct(array $data)
+    {
+        parent::__construct();
+        $this->operation = $data['operation'];
+    }
 
     public function rules()
     {
         return [
             ['operation', 'required'],
-            ['operation', function($attribute){
-                if (!(Calculator::isAllowedOperation($this->operation))){
-                    $this->addError($attribute,'Invalid operation');
+            ['operation', function ($attribute) {
+                if (!(Calculator::isAllowedOperation($this->operation))) {
+                    $this->addError($attribute, 'Invalid operation');
                 }
             }],
         ];

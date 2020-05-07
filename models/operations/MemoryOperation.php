@@ -4,7 +4,6 @@
 namespace app\models\operations;
 
 
-
 use app\models\EvalTypes;
 use yii\helpers\ArrayHelper;
 
@@ -18,8 +17,9 @@ class MemoryOperation extends Operation
      */
     public function __construct(array $data)
     {
-        parent::__construct();
-        $this->attributes = $data;
+        parent::__construct($data);
+        $this->rightValue = $data['rightValue'];
+
     }
 
     public function rules()

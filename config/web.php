@@ -19,6 +19,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ZfL1G67L15K6UOLk4hWdX2b5yIQoxFlH',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -43,17 +46,12 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => true,
             'rules' => [
-                'GET ' => 'site/index',
-                new GroupUrlRule([
-                    'prefix' => 'ajax',
-                    'rules' => [
-                        'POST evaluate/unary' => 'ajax/evaluateUnary',
-                        'POST evaluate/binary' => 'ajax/evaluateBinary',
-                        'POST evaluate/memory' => 'ajax/workWithMemory',
-                        'POST clear' => 'ajax/clearFlashMemory',
-                        'POST evaluate' => 'ajax/evaluate',
-                    ],
-                ])
+                'GET /' => 'site/index',
+                'ajax/evaluate/unary' => 'ajax/evaluate-unary',
+                'ajax/evaluate/binary' => 'ajax/evaluate-binary',
+                'ajax/evaluate/memory' => 'ajax/work-with-memory',
+                'ajax/clear' => 'ajax/clear-flash-memory',
+                'ajax/evaluate' => 'ajax/evaluate',
             ],
         ],
 

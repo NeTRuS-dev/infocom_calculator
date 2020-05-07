@@ -71,7 +71,7 @@
                 <button-component @button-pressed="numericButtonPressed" button-name="dot">.</button-component>
                 <button-component @button-pressed="numericButtonPressed" button-name="reduce"><=</button-component>
             </div>
-            <div class="d-flex justify-content-center mb-2 mt-2">
+            <div class="d-flex justify-content-between mb-2 mt-2">
                 <button-component @button-pressed="evaluateHandler"
                                   button-width="14"
                                   button-name="evaluate">=
@@ -122,7 +122,7 @@
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
+                this.displayValue = this.dataProvider.receiveResponseData(unaryOperationUrl, nestedData).resultValue || '0'
             },
             binaryOperationButtonPressedHandler(data) {
 
@@ -134,7 +134,7 @@
                     this.previousInputWasANumber = false;
                     nestedData.rightValue = this.displayValue
                 }
-                this.memorizedDisplayValues = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
+                this.memorizedDisplayValues = this.dataProvider.receiveResponseData(binaryOperationUrl, nestedData).resultValue || ''
             },
             memoryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
@@ -142,7 +142,7 @@
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
+                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue || '0'
             },
             evaluateHandler() {
                 //TODO send eval request

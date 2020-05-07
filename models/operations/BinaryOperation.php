@@ -8,7 +8,7 @@ use app\models\EvalTypes;
 
 class BinaryOperation extends Operation
 {
-    public ?string $rightValue = null;
+    public ?string $rightValue;
 
     /**
      * Operation constructor.
@@ -16,8 +16,9 @@ class BinaryOperation extends Operation
      */
     public function __construct(array $data)
     {
-        parent::__construct();
-        $this->attributes = $data;
+        parent::__construct($data);
+        $this->rightValue = $data['rightValue'] ?? null;
+
     }
 
     public function executeOperation(): string
