@@ -23,15 +23,6 @@ class Calculator extends Model
 
     }
 
-    public function rules()
-    {
-        return [
-            ['operation', 'required'],
-            ['operation', function () {
-
-            }],
-        ];
-    }
 
     public function getMemorizedData(): float
     {
