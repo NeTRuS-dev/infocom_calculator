@@ -1,6 +1,5 @@
 <?php
 
-use yii\filters\Cors;
 use yii\web\GroupUrlRule;
 
 $params = require __DIR__ . '/params.php';
@@ -9,12 +8,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => [
-        'log',
-        'corsFilter' => [
-            'class' => Cors::class,
-        ]
-    ],
+    'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
