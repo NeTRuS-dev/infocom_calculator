@@ -28,21 +28,27 @@ class AjaxController extends Controller
             ]
         ];
     }
-    public function actionEvaluateUnary(){
+
+    public function actionEvaluateUnary()
+    {
         //TODO write the body
-        $calc=new Calculator(new UnaryOperation(Yii::$app->request->post()));
+        $calc = new Calculator(new UnaryOperation(Yii::$app->request->post()));
+        return $calc->execOperation();
+    }
+
+    public function actionEvaluateBinary()
+    {
+        //TODO write the body
+        $calc = new Calculator(new BinaryOperation(Yii::$app->request->post()));
+        return $calc->execOperation();
 
     }
-    public function actionEvaluateBinary(){
+
+    public function actionWorkWithMemory()
+    {
         //TODO write the body
-        $calc=new Calculator(new BinaryOperation(Yii::$app->request->post()));
-
-
-    }
-    public function actionWorkWithMemory(){
-        //TODO write the body
-        $calc=new Calculator(new MemoryOperation(Yii::$app->request->post()));
-
+        $calc = new Calculator(new MemoryOperation(Yii::$app->request->post()));
+        return $calc->execOperation();
 
     }
 

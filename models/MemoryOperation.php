@@ -24,13 +24,19 @@ class MemoryOperation extends Operation
     {
         return ArrayHelper::merge(parent::rules(), [
             ['rightValue', 'required', 'when' => function (MemoryOperation $model) {
-                return ($model->_operation === EvalTypes::M_add || $model->_operation === EvalTypes::M_sub);
+                return ($model->operation === EvalTypes::M_add || $model->operation === EvalTypes::M_sub);
             }],
         ]);
     }
 
-    public function executeOperation()
+    public function executeOperation():string
     {
         // TODO: Implement executeOperation() method.
+        if(!$this->validate()){
+            return '';
+        }
+        else{
+
+        }
     }
 }

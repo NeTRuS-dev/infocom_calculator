@@ -26,6 +26,13 @@ class Calculator extends Model
         $this->operation->calculatorInstance = $this;
     }
 
+    /**
+     * @return array
+     */
+    public function execOperation(): array
+    {
+        return ['newDisplayValue' => $this->operation->executeOperation()];
+    }
 
     public function getMemorizedData(): float
     {

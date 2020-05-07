@@ -16,8 +16,14 @@ class UnaryOperation extends Operation
         $this->attributes = $data;
     }
 
-    public function executeOperation()
+    public function executeOperation():string
     {
         // TODO: Implement executeOperation() method.
+        if(!$this->validate()){
+            return '';
+        }
+        else{
+
+        }
     }
 }

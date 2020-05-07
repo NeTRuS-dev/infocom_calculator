@@ -27,8 +27,14 @@ class BinaryOperation extends Operation
         ]);
     }
 
-    public function executeOperation()
+    public function executeOperation():string
     {
         // TODO: Implement executeOperation() method.
+        if(!$this->validate()){
+            return '';
+        }
+        else{
+
+        }
     }
 }
