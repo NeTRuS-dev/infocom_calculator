@@ -33,18 +33,15 @@ class MemoryOperation extends Operation
     {
         // TODO: Implement executeOperation() method.
         if (!$this->validate()) {
-            return '';
+            return '0';
         } else {
-            /**
-             * @var string $result
-             */
-            $result = '';
+            $result = '0';
             switch ($this->operation) {
                 case EvalTypes::M_clear:
                     $this->calculatorInstance->deeplyMemorizedData = 0;
                     break;
                 case EvalTypes::M_read:
-                    $result = $this->calculatorInstance->deeplyMemorizedData;
+                    $result = strval($this->calculatorInstance->deeplyMemorizedData);
                     break;
                 case EvalTypes::M_add:
                     $tmp = $this->calculatorInstance->deeplyMemorizedData;

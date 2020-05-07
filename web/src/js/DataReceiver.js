@@ -1,8 +1,8 @@
 export class DataReceiver {
-    receiveResponse(url, body, method = 'POST') {
+    async receiveResponse(url, body, method = 'POST') {
         let csrfParam = document.querySelector('meta[name="csrf-param"]').content
         body[csrfParam] = document.querySelector('meta[name="csrf-token"]').content
-        return fetch(url, {
+        let response = await fetch(url, {
             mode: 'cors',
             credentials: 'include',
             headers: {
@@ -10,6 +10,17 @@ export class DataReceiver {
             },
             method: method,
             body: JSON.stringify(body)
-        });
+        })
+        let data;
+        /**
+         * dont need to care about errors
+         */
+        if (response.ok) {
+            data = await response.json();
+
+        } else {
+            data = {newDisplayValue: ''};
+        }
+        return data;
     }
 }

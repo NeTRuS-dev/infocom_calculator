@@ -85,13 +85,14 @@
     import DisplayComponent from "@/js/components/displayComponent";
     import ButtonComponent from "@/js/components/buttonComponent";
     import {DataReceiver} from "@/js/DataReceiver";
-    import {memoryOperationUrl} from "@/js/config";
+    import {memoryOperationUrl, binaryOperationUrl, unaryOperationUrl} from "@/js/config";
 
     export default {
         name: "mainCalculatorComponent",
         data() {
             return {
                 displayValue: '',
+                isOperationSelection: false,
                 dataProvider: new DataReceiver()
             }
         },
@@ -115,12 +116,16 @@
             },
             binaryOperationButtonPressedHandler(data) {
                 //TODO send data update
+                if (this.isOperationSelection) {
 
+                }
             },
             memoryOperationButtonPressedHandler(data) {
-                //TODO send data update
-                let nestedData=
-                this.dataProvider.receiveResponse(memoryOperationUrl,)
+                let nestedData = {
+                    operation: data,
+                    rightValue: this.displayValue
+                }
+                this.displayValue = this.dataProvider.receiveResponse(memoryOperationUrl, nestedData).newDisplayValue
             },
             /**
              *  input via ajax is a pervert idea
