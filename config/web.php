@@ -45,9 +45,11 @@ $config = [
             'rules' => [
                 'GET ' => 'site/index',
                 new GroupUrlRule([
-                    'prefix' => 'api',
+                    'prefix' => 'ajax',
                     'rules' => [
-                        'POST evaluate' => 'ajax/evaluate',
+                        'POST evaluate/unary' => 'ajax/evaluateUnary',
+                        'POST evaluate/binary' => 'ajax/evaluateBinary',
+                        'POST evaluate/memory' => 'ajax/workWithMemory',
                     ],
                 ])
             ],

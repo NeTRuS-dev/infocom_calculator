@@ -3,6 +3,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use yii\filters\Cors;
 use yii\web\Controller;
 use yii\web\Response;
@@ -23,7 +24,13 @@ class AjaxController extends Controller
             ]
         ];
     }
-    public function actionEvaluate(){
+    public function actionEvaluateUnary(){
+        //TODO write the body
+    }
+    public function actionEvaluateBinary(){
+        //TODO write the body
+    }
+    public function actionWorkWithMemory(){
         //TODO write the body
     }
 
