@@ -172,10 +172,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "displayComponent",
   props: {
     valueToDisplay: {
+      required: true,
+      type: String
+    },
+    memorizedDisplay: {
       required: true,
       type: String
     }
@@ -324,7 +331,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
      */
     computedValueToDisplay: function computedValueToDisplay() {
       //TODO display memorized
-      return "".concat(this.memorizedDisplayValues, "\n").concat(this.displayValue.slice(0, 18));
+      return "".concat(this.displayValue.slice(0, 18));
     }
   },
   created: function created() {
@@ -342,8 +349,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.inputFromStart = true; //TODO send data update
-
+                _this.inputFromStart = true;
                 nestedData = {
                   operation: data,
                   rightValue: _this.displayValue
@@ -391,7 +397,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this2.displayValue = tmp;
                   _this2.memorizedDisplayValues = '';
                   _this2.inputFromStart = true;
-                  _this2.previousInputWasANumber = false;
+                  _this2.previousInputWasANumber = true;
                 } else {
                   _this2.memorizedDisplayValues = tmp;
                 }
@@ -4436,6 +4442,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "display" }, [
+    _c("div", { staticClass: "memoryDisplay" }, [
+      _c("span", [_vm._v(_vm._s(_vm.memorizedDisplay))])
+    ]),
+    _vm._v(" "),
     _c("span", [_vm._v("\n        " + _vm._s(_vm.valueToDisplay) + "\n    ")])
   ])
 }
@@ -4466,7 +4476,10 @@ var render = function() {
     { staticClass: "calculator" },
     [
       _c("display-component", {
-        attrs: { "value-to-display": _vm.computedValueToDisplay }
+        attrs: {
+          "value-to-display": _vm.computedValueToDisplay,
+          "memorized-display": _vm.memorizedDisplayValues
+        }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "buttons" }, [

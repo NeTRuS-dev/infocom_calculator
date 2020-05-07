@@ -1,5 +1,8 @@
 <template>
     <div class="display">
+        <div class="memoryDisplay">
+            <span>{{memorizedDisplay}}</span>
+        </div>
         <span>
             {{valueToDisplay}}
         </span>
@@ -11,6 +14,10 @@
         name: "displayComponent",
         props: {
             valueToDisplay: {
+                required: true,
+                type: String,
+            },
+            memorizedDisplay: {
                 required: true,
                 type: String,
             }
@@ -30,8 +37,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
-        span {
+        .memoryDisplay {
+            position: relative;
+            width: 100%;
+            height: 45%;
+
+            > span {
+                font-size: 1.3rem;
+                color: #5a6268;
+                position: absolute;
+                right: 7%;
+                top: 13%;
+            }
+        }
+
+        > span {
             font-size: 2rem;
         }
     }

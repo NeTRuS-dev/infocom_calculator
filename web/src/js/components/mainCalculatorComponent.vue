@@ -1,6 +1,6 @@
 <template>
     <div class="calculator">
-        <display-component :value-to-display="computedValueToDisplay"></display-component>
+        <display-component :value-to-display="computedValueToDisplay" :memorized-display="memorizedDisplayValues"></display-component>
         <div class="buttons">
             <div class="d-flex justify-content-between mb-2 mt-2">
                 <button-component @button-pressed="memoryOperationButtonPressedHandler" button-name="MC">MC
@@ -107,7 +107,7 @@
              */
             computedValueToDisplay() {
                 //TODO display memorized
-                return `${this.memorizedDisplayValues}\n${this.displayValue.slice(0, 18)}`;
+                return `${this.displayValue.slice(0, 18)}`;
             }
         },
         created() {
@@ -139,7 +139,7 @@
                     this.displayValue = tmp;
                     this.memorizedDisplayValues = '';
                     this.inputFromStart = true;
-                    this.previousInputWasANumber = false
+                    this.previousInputWasANumber = true
                 } else {
                     this.memorizedDisplayValues = tmp;
                 }
