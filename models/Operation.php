@@ -6,6 +6,11 @@ namespace app\models;
 
 use yii\base\Model;
 
+/**
+ * Class Operation
+ * @property Calculator calculatorInstance
+ * @property string operation
+ */
 abstract class Operation extends Model
 {
     private string $_operation;
@@ -47,6 +52,7 @@ abstract class Operation extends Model
 
     /**
      * @param string $operation
+     * @return void
      */
     public function setOperation(string $operation): void
     {

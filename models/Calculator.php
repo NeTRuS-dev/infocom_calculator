@@ -23,6 +23,7 @@ class Calculator extends Model
     {
         parent::__construct();
         $this->operation = $operation;
+        $this->operation->calculatorInstance = $this;
     }
 
 

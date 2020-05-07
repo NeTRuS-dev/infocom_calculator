@@ -3,6 +3,10 @@
 
 namespace app\controllers;
 
+use app\models\BinaryOperation;
+use app\models\Calculator;
+use app\models\MemoryOperation;
+use app\models\UnaryOperation;
 use Yii;
 use yii\filters\Cors;
 use yii\web\Controller;
@@ -26,17 +30,19 @@ class AjaxController extends Controller
     }
     public function actionEvaluateUnary(){
         //TODO write the body
-        $data=Yii::$app->request->post();
+        $calc=new Calculator(new UnaryOperation(Yii::$app->request->post()));
 
     }
     public function actionEvaluateBinary(){
         //TODO write the body
-        $data=Yii::$app->request->post();
+        $calc=new Calculator(new BinaryOperation(Yii::$app->request->post()));
+
 
     }
     public function actionWorkWithMemory(){
         //TODO write the body
-        $data=Yii::$app->request->post();
+        $calc=new Calculator(new MemoryOperation(Yii::$app->request->post()));
+
 
     }
 
