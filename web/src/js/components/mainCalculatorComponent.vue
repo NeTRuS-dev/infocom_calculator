@@ -116,7 +116,7 @@
             },
             binaryOperationButtonPressedHandler(data) {
                 //TODO send data update
-                if (this.isOperationSelection) {
+                if (!this.isOperationSelection) {
 
                 }
             },
@@ -131,6 +131,7 @@
              *  input via ajax is a pervert idea
              */
             numericButtonPressed(number) {
+                this.isOperationSelection=false;
                 if (number === 'reduce') {
                     this.displayValue = this.displayValue.slice(0, -1)
                 } else {

@@ -1,9 +1,11 @@
 <?php
 
 
-namespace app\models;
+namespace app\models\operations;
 
 
+
+use app\models\Calculator;
 use yii\base\Model;
 
 /**
