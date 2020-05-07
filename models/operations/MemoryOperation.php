@@ -33,7 +33,6 @@ class MemoryOperation extends Operation
 
     public function executeOperation(): string
     {
-        // TODO: Implement executeOperation() method.
         if (!$this->validate()) {
             return '0';
         } else {

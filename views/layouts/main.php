@@ -19,7 +19,6 @@ use yii\helpers\Url;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <!--    TODO remove this crutch -->
     <link rel="stylesheet" href="<?= Url::to('@web/dist/css/app.css') ?>">
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -32,7 +31,6 @@ use yii\helpers\Url;
 </div>
 
 <?php $this->endBody() ?>
-<!-- TODO crutch)-->
 <script src="<?= Url::to('@web/dist/js/app.js') ?>"></script>
 </body>
 </html>

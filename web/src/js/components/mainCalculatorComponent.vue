@@ -118,7 +118,6 @@
         methods: {
             async unaryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
-                //TODO send data update
                 let nestedData = {
                     operation: data,
                     rightValue: this.displayValue
