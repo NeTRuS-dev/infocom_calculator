@@ -59,6 +59,7 @@ class MemoryOperation extends Operation
                 default:
                     break;
             }
+            return $result;
         }
     }
 }
