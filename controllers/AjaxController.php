@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 use app\models\Calculator;
+use app\models\EvalTypes;
 use app\models\operations\BinaryOperation;
 use app\models\operations\MemoryOperation;
 use app\models\operations\UnaryOperation;
@@ -48,11 +49,18 @@ class AjaxController extends Controller
         return $calc->execOperation();
 
     }
-    public function actionClearFlashMemory(){
+
+    public function actionClearFlashMemory()
+    {
+        $calc = new Calculator();
+        $calc->memorizedData = 0;
+        $calc->memorizedOperation = EvalTypes::add;
 
     }
-    public function actionEvaluate(){
 
+    public function actionEvaluate()
+    {
+        //TODO evaluate action
     }
 
 }

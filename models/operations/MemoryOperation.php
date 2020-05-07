@@ -61,4 +61,5 @@ class MemoryOperation extends Operation
             return $result;
         }
     }
+
 }

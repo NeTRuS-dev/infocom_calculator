@@ -18,13 +18,15 @@ class Calculator extends Model
     private static string $deep_mem_data_session_key = 'deeply_memorized_value';
     private static string $mem_operation_session_key = 'memorized_operation';
 
-    private Operation $operation;
+    private ?Operation $operation;
 
-    public function __construct(Operation $operation)
+    public function __construct(Operation $operation = null)
     {
         parent::__construct();
-        $this->operation = $operation;
-        $this->operation->calculatorInstance = $this;
+        if ($operation !== null) {
+            $this->operation = $operation;
+            $this->operation->calculatorInstance = $this;
+        }
     }
 
     /**
@@ -32,7 +34,9 @@ class Calculator extends Model
      */
     public function execOperation(): array
     {
-        return ['resultValue' => $this->operation->executeOperation()];
+        if ($this->operation !== null) {
+            return ['resultValue' => $this->operation->executeOperation()];
+        }
     }
 
     public function getMemorizedData(): float
@@ -62,12 +66,10 @@ class Calculator extends Model
 
     public function setMemorizedOperation(string $operation)
     {
-        if ($this->isAllowedOperation($operation)) {
-            Yii::$app->session->set(self::$mem_operation_session_key, $operation);
-        }
+        Yii::$app->session->set(self::$mem_operation_session_key, $operation);
     }
 
-    public function isAllowedOperation(string $operation): bool
+    public static function isAllowedOperation(string $operation): bool
     {
         $reflTypesClass = new \ReflectionClass(EvalTypes::class);
         return array_key_exists($operation, array_flip($reflTypesClass->getConstants()));

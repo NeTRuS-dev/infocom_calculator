@@ -77,7 +77,7 @@
                                   button-name="evaluate">=
                 </button-component>
                 <button-component @button-pressed="clearMemory" button-name="clearMem">CE
-
+                </button-component>
             </div>
         </div>
     </div>
@@ -87,16 +87,17 @@
     import DisplayComponent from "@/js/components/displayComponent";
     import ButtonComponent from "@/js/components/buttonComponent";
     import {DataReceiver} from "@/js/DataReceiver";
-    import {memoryOperationUrl, binaryOperationUrl, unaryOperationUrl} from "@/js/config";
+    import {memoryOperationUrl, binaryOperationUrl, unaryOperationUrl, clearMemoryUrl, evalUrl} from "@/js/config";
 
     export default {
         name: "mainCalculatorComponent",
         data() {
             return {
-                displayValue: '',
+                displayValue: '0',
                 memorizedDisplayValues: '',
                 dataProvider: new DataReceiver(),
                 inputFromStart: false,
+                previousInputWasANumber: false,
             }
         },
         computed: {
@@ -117,13 +118,21 @@
             unaryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
                 //TODO send data update
-
-            },
-            binaryOperationButtonPressedHandler(data) {
-                this.inputFromStart = true;
                 let nestedData = {
                     operation: data,
                     rightValue: this.displayValue
+                }
+                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
+            },
+            binaryOperationButtonPressedHandler(data) {
+
+                this.inputFromStart = true;
+                let nestedData = {
+                    operation: data,
+                }
+                if (this.previousInputWasANumber) {
+                    this.previousInputWasANumber = false;
+                    nestedData.rightValue = this.displayValue
                 }
                 this.memorizedDisplayValues = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
             },
@@ -135,28 +144,39 @@
                 }
                 this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
             },
-            evaluateHandler(){
-
+            evaluateHandler() {
+                //TODO send eval request
             },
-            clearMemory(){
-
-            },
-            /**
-             *  input via ajax is a pervert idea
-             */
-            numericButtonPressed(number) {
-                if (this.inputFromStart) {
-                    this.displayValue = ''
-                    this.inputFromStart = false
-                }
-                if (number === 'reduce') {
-                    this.displayValue = this.displayValue.slice(0, -1)
-                } else {
-                    this.displayValue += number === 'dot' ? '.' : number
-                }
-            }
         },
-        components: {ButtonComponent, DisplayComponent},
+        clearMemory() {
+            this.dataProvider.receiveResponseData(clearMemoryUrl)
+            this.displayValue = '0'
+            this.memorizedDisplayValues = ''
+            this.inputFromStart = true;
+            this.previousInputWasANumber = false
+
+        },
+        /**
+         *  input via ajax is a pervert idea
+         */
+        numericButtonPressed(number) {
+            this.previousInputWasANumber = true
+            if (this.inputFromStart) {
+                this.displayValue = ''
+                this.inputFromStart = false
+            }
+            if (number === 'reduce') {
+                this.displayValue = this.displayValue.slice(0, -1)
+            } else {
+                this.displayValue += number === 'dot' ? '.' : number
+            }
+        }
+    }
+    ,
+    components: {
+        ButtonComponent, DisplayComponent
+    }
+    ,
     }
 </script>
 

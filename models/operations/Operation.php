@@ -21,10 +21,13 @@ abstract class Operation extends Model
     {
         return [
             ['operation', 'required'],
+            ['operation', function($attribute){
+                if (!(Calculator::isAllowedOperation($this->operation))){
+                    $this->addError($attribute,'Invalid operation');
+                }
+            }],
         ];
     }
-
-    protected abstract function makeCalc(float $left, string $operation, float $right): float;
 
     public abstract function executeOperation(): string;
 
