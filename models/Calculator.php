@@ -32,7 +32,7 @@ class Calculator extends Model
      */
     public function execOperation(): array
     {
-        return ['newDisplayValue' => $this->operation->executeOperation()];
+        return ['resultValue' => $this->operation->executeOperation()];
     }
 
     public function getMemorizedData(): float

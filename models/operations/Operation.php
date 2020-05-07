@@ -4,7 +4,6 @@
 namespace app\models\operations;
 
 
-
 use app\models\Calculator;
 use yii\base\Model;
 
@@ -24,6 +23,8 @@ abstract class Operation extends Model
             ['operation', 'required'],
         ];
     }
+
+    protected abstract function makeCalc(float $left, string $operation, float $right): float;
 
     public abstract function executeOperation(): string;
 

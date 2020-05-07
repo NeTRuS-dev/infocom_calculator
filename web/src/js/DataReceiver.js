@@ -19,7 +19,7 @@ export class DataReceiver {
             data = await response.json();
 
         } else {
-            data = {newDisplayValue: ''};
+            data = {resultValue: ''};
         }
         return data;
     }

@@ -48,5 +48,11 @@ class AjaxController extends Controller
         return $calc->execOperation();
 
     }
+    public function actionClearFlashMemory(){
+
+    }
+    public function actionEvaluate(){
+
+    }
 
 }

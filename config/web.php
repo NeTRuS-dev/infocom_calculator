@@ -50,6 +50,8 @@ $config = [
                         'POST evaluate/unary' => 'ajax/evaluateUnary',
                         'POST evaluate/binary' => 'ajax/evaluateBinary',
                         'POST evaluate/memory' => 'ajax/workWithMemory',
+                        'POST clear' => 'ajax/clearFlashMemory',
+                        'POST evaluate' => 'ajax/evaluate',
                     ],
                 ])
             ],

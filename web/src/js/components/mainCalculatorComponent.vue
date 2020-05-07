@@ -72,10 +72,12 @@
                 <button-component @button-pressed="numericButtonPressed" button-name="reduce"><=</button-component>
             </div>
             <div class="d-flex justify-content-center mb-2 mt-2">
-                <button-component @button-pressed="unaryOperationButtonPressedHandler"
+                <button-component @button-pressed="evaluateHandler"
                                   button-width="14"
                                   button-name="evaluate">=
                 </button-component>
+                <button-component @button-pressed="clearMemory" button-name="clearMem">CE
+
             </div>
         </div>
     </div>
@@ -92,6 +94,7 @@
         data() {
             return {
                 displayValue: '',
+                memorizedDisplayValues: '',
                 dataProvider: new DataReceiver(),
                 inputFromStart: false,
             }
@@ -103,7 +106,7 @@
              */
             computedValueToDisplay() {
                 //TODO display memorized
-                return this.displayValue.slice(0, 18);
+                return `${this.memorizedDisplayValues}\n${this.displayValue.slice(0, 18)}`;
             }
         },
         created() {
@@ -122,10 +125,7 @@
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).newDisplayValue
-
-                //TODO send data update
-
+                this.memorizedDisplayValues = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
             },
             memoryOperationButtonPressedHandler(data) {
                 this.inputFromStart = true;
@@ -133,7 +133,13 @@
                     operation: data,
                     rightValue: this.displayValue
                 }
-                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).newDisplayValue
+                this.displayValue = this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData).resultValue
+            },
+            evaluateHandler(){
+
+            },
+            clearMemory(){
+
             },
             /**
              *  input via ajax is a pervert idea

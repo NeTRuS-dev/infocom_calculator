@@ -5,7 +5,6 @@ namespace app\models\operations;
 
 
 use app\models\EvalTypes;
-use yii\helpers\ArrayHelper;
 
 class BinaryOperation extends Operation
 {
@@ -21,13 +20,6 @@ class BinaryOperation extends Operation
         $this->attributes = $data;
     }
 
-//    public function rules()
-//    {
-//        return ArrayHelper::merge(parent::rules(), [
-//            ['rightValue', 'required'],
-//        ]);
-//    }
-
     public function executeOperation(): string
     {
         // TODO: Implement executeOperation() method.
@@ -42,7 +34,7 @@ class BinaryOperation extends Operation
         }
     }
 
-    private function makeCalc(float $left, string $operation, float $right): float
+    protected function makeCalc(float $left, string $operation, float $right): float
     {
         /**
          * @var float $returnValue

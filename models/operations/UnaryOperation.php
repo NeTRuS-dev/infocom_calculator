@@ -4,6 +4,8 @@
 namespace app\models\operations;
 
 
+use yii\helpers\ArrayHelper;
+
 class UnaryOperation extends Operation
 {
     /**
@@ -14,6 +16,13 @@ class UnaryOperation extends Operation
     {
         parent::__construct();
         $this->attributes = $data;
+    }
+
+    public function rules()
+    {
+        return ArrayHelper::merge(parent::rules(), [
+            ['rightValue', 'required'],
+        ]);
     }
 
     public function executeOperation(): string
