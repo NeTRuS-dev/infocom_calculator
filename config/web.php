@@ -18,9 +18,8 @@ $config = [
     'components' => [
         'request' => [
             'cookieValidationKey' => 'ZfL1G67L15K6UOLk4hWdX2b5yIQoxFlH',
-            'csrfCookie' => ['httpOnly' => true, 'sameSite' => 'None'],
             'enableCsrfValidation' => true,
-            'enableCsrfCookie' => true,
+            'enableCsrfCookie' => false,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ]

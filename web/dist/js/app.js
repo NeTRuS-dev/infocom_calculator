@@ -240,6 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_buttonComponent__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/js/components/buttonComponent */ "./js/components/buttonComponent.vue");
 /* harmony import */ var _js_DataReceiver__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/js/DataReceiver */ "./js/DataReceiver.js");
 /* harmony import */ var _js_config__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/js/config */ "./js/config.js");
+/* harmony import */ var _js_OperationTypes__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/js/OperationTypes */ "./js/OperationTypes.js");
 
 
 
@@ -360,6 +361,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
+//
+
 
 
 
@@ -384,15 +387,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       return "".concat(this.displayValue.slice(0, 18));
     },
     computedMemorizedDisplayValues: function computedMemorizedDisplayValues() {
-      //TODO fix symbols
       var _this$memorizedDispla = this.memorizedDisplayValues.split(' '),
           _this$memorizedDispla2 = _slicedToArray(_this$memorizedDispla, 2),
           leftValue = _this$memorizedDispla2[0],
           operation = _this$memorizedDispla2[1];
 
-      console.log(leftValue);
-      console.log(operation);
-      return this.memorizedDisplayValues;
+      if (leftValue && operation) {
+        return "".concat(leftValue, " ").concat(_js_OperationTypes__WEBPACK_IMPORTED_MODULE_22__["OperationTypes"].hasOwnProperty(operation) ? _js_OperationTypes__WEBPACK_IMPORTED_MODULE_22__["OperationTypes"][operation] : operation);
+      } else {
+        return '';
+      }
     }
   },
   created: function created() {
@@ -1709,6 +1713,22 @@ module.exports = function (KEY, length, exec, sham) {
 
 /***/ }),
 
+/***/ "../../node_modules/core-js/internals/freezing.js":
+/*!******************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/core-js/internals/freezing.js ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var fails = __webpack_require__(/*! ../internals/fails */ "../../node_modules/core-js/internals/fails.js");
+
+module.exports = !fails(function () {
+  return Object.isExtensible(Object.preventExtensions({}));
+});
+
+
+/***/ }),
+
 /***/ "../../node_modules/core-js/internals/function-bind-context.js":
 /*!*******************************************************************************************************************!*\
   !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/core-js/internals/function-bind-context.js ***!
@@ -1938,6 +1958,78 @@ if (typeof store.inspectSource != 'function') {
 }
 
 module.exports = store.inspectSource;
+
+
+/***/ }),
+
+/***/ "../../node_modules/core-js/internals/internal-metadata.js":
+/*!***************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/core-js/internals/internal-metadata.js ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "../../node_modules/core-js/internals/hidden-keys.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "../../node_modules/core-js/internals/is-object.js");
+var has = __webpack_require__(/*! ../internals/has */ "../../node_modules/core-js/internals/has.js");
+var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "../../node_modules/core-js/internals/object-define-property.js").f;
+var uid = __webpack_require__(/*! ../internals/uid */ "../../node_modules/core-js/internals/uid.js");
+var FREEZING = __webpack_require__(/*! ../internals/freezing */ "../../node_modules/core-js/internals/freezing.js");
+
+var METADATA = uid('meta');
+var id = 0;
+
+var isExtensible = Object.isExtensible || function () {
+  return true;
+};
+
+var setMetadata = function (it) {
+  defineProperty(it, METADATA, { value: {
+    objectID: 'O' + ++id, // object ID
+    weakData: {}          // weak collections IDs
+  } });
+};
+
+var fastKey = function (it, create) {
+  // return a primitive with prefix
+  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+  if (!has(it, METADATA)) {
+    // can't set metadata to uncaught frozen object
+    if (!isExtensible(it)) return 'F';
+    // not necessary to add metadata
+    if (!create) return 'E';
+    // add missing metadata
+    setMetadata(it);
+  // return object ID
+  } return it[METADATA].objectID;
+};
+
+var getWeakData = function (it, create) {
+  if (!has(it, METADATA)) {
+    // can't set metadata to uncaught frozen object
+    if (!isExtensible(it)) return true;
+    // not necessary to add metadata
+    if (!create) return false;
+    // add missing metadata
+    setMetadata(it);
+  // return the store of weak collections IDs
+  } return it[METADATA].weakData;
+};
+
+// add metadata on freeze-family methods calling
+var onFreeze = function (it) {
+  if (FREEZING && meta.REQUIRED && isExtensible(it) && !has(it, METADATA)) setMetadata(it);
+  return it;
+};
+
+var meta = module.exports = {
+  REQUIRED: false,
+  fastKey: fastKey,
+  getWeakData: getWeakData,
+  onFreeze: onFreeze
+};
+
+hiddenKeys[METADATA] = true;
 
 
 /***/ }),
@@ -4016,6 +4108,33 @@ var objectDefinePropertyModile = __webpack_require__(/*! ../internals/object-def
 // https://tc39.github.io/ecma262/#sec-object.defineproperty
 $({ target: 'Object', stat: true, forced: !DESCRIPTORS, sham: !DESCRIPTORS }, {
   defineProperty: objectDefinePropertyModile.f
+});
+
+
+/***/ }),
+
+/***/ "../../node_modules/core-js/modules/es.object.freeze.js":
+/*!************************************************************************************************************!*\
+  !*** C:/OpenServer/OpenServer/domains/infocom_calculator/node_modules/core-js/modules/es.object.freeze.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "../../node_modules/core-js/internals/export.js");
+var FREEZING = __webpack_require__(/*! ../internals/freezing */ "../../node_modules/core-js/internals/freezing.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "../../node_modules/core-js/internals/fails.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "../../node_modules/core-js/internals/is-object.js");
+var onFreeze = __webpack_require__(/*! ../internals/internal-metadata */ "../../node_modules/core-js/internals/internal-metadata.js").onFreeze;
+
+var nativeFreeze = Object.freeze;
+var FAILS_ON_PRIMITIVES = fails(function () { nativeFreeze(1); });
+
+// `Object.freeze` method
+// https://tc39.github.io/ecma262/#sec-object.freeze
+$({ target: 'Object', stat: true, forced: FAILS_ON_PRIMITIVES, sham: !FREEZING }, {
+  freeze: function freeze(it) {
+    return nativeFreeze && isObject(it) ? nativeFreeze(onFreeze(it)) : it;
+  }
 });
 
 
@@ -19152,6 +19271,30 @@ var DataReceiver = /*#__PURE__*/function () {
 
   return DataReceiver;
 }();
+
+/***/ }),
+
+/***/ "./js/OperationTypes.js":
+/*!******************************!*\
+  !*** ./js/OperationTypes.js ***!
+  \******************************/
+/*! exports provided: OperationTypes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OperationTypes", function() { return OperationTypes; });
+/* harmony import */ var core_js_modules_es_object_freeze__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.freeze */ "../../node_modules/core-js/modules/es.object.freeze.js");
+/* harmony import */ var core_js_modules_es_object_freeze__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_freeze__WEBPACK_IMPORTED_MODULE_0__);
+
+var OperationTypes = Object.freeze({
+  pow: '^',
+  mod: '%',
+  divide: '/',
+  multiply: '*',
+  subtract: '-',
+  add: '+'
+});
 
 /***/ }),
 
