@@ -17,8 +17,10 @@ $config = [
     'charset' => 'UTF-8',
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ZfL1G67L15K6UOLk4hWdX2b5yIQoxFlH',
+            'csrfCookie' => ['httpOnly' => true, 'sameSite' => 'None'],
+            'enableCsrfValidation' => true,
+            'enableCsrfCookie' => true,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ]

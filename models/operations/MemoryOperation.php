@@ -39,7 +39,7 @@ class MemoryOperation extends Operation
             $result = '0';
             switch ($this->operation) {
                 case EvalTypes::M_clear:
-                    $this->calculatorInstance->deeplyMemorizedData = 0;
+                    $this->calculatorInstance->unsetDeeplyMemorizedData();
                     break;
                 case EvalTypes::M_read:
                     $result = strval($this->calculatorInstance->deeplyMemorizedData);

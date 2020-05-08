@@ -10,6 +10,7 @@ use app\models\operations\MemoryOperation;
 use app\models\operations\UnaryOperation;
 use Yii;
 use yii\filters\Cors;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\Response;
 
@@ -21,7 +22,7 @@ class AjaxController extends Controller
             'corsFilter' => [
                 'class' => Cors::class,
                 'cors' => [
-                    'Origin' => ['http://localhost:3000', 'http://calc.info'],
+                    'Origin' => Yii::$app->params['allowedOrigins'],
                     'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
                     'Access-Control-Request-Headers' => ['*'],
                     'Access-Control-Allow-Credentials' => true,
@@ -36,6 +37,17 @@ class AjaxController extends Controller
                 ],
             ],
         ];
+    }
+
+    //crutch(
+    public function beforeAction($action)
+    {
+        $this->enableCsrfValidation = false;
+        try {
+            return parent::beforeAction($action);
+        } catch (BadRequestHttpException $e) {
+            return false;
+        }
     }
 
     public function actionEvaluateUnary()
