@@ -137,7 +137,7 @@
                 let nestedData = {
                     operation: data,
                 }
-                if (this.previousInputWasANumber) {
+                if (this.previousInputWasANumber || data === 'evaluate') {
                     this.previousInputWasANumber = false;
                     nestedData.rightValue = this.displayValue
                 }
