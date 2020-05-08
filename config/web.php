@@ -1,7 +1,5 @@
 <?php
 
-use yii\web\GroupUrlRule;
-
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -48,10 +46,10 @@ $config = [
             'enableStrictParsing' => true,
             'rules' => [
                 'GET /' => 'site/index',
-                'ajax/evaluate/unary' => 'ajax/evaluate-unary',
-                'ajax/evaluate/binary' => 'ajax/evaluate-binary',
-                'ajax/evaluate/memory' => 'ajax/work-with-memory',
-                'ajax/clear' => 'ajax/clear-flash-memory',
+                'POST ajax/evaluate/unary' => 'ajax/evaluate-unary',
+                'POST ajax/evaluate/binary' => 'ajax/evaluate-binary',
+                'POST ajax/evaluate/memory' => 'ajax/work-with-memory',
+                'POST ajax/clear' => 'ajax/clear-flash-memory',
             ],
         ],
 
