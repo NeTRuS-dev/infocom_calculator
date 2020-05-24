@@ -1,6 +1,6 @@
 <template>
     <div @select.prevent @mousedown.prevent :style="{width:buttonWidth+'rem',height:buttonHeight+'rem'}"
-         @click="buttonPressed">
+         @click="buttonPressed" class="btn" :class="{disabled:isWaitingForResponse}">
     <span>
        <slot></slot>
     </span>
@@ -15,6 +15,10 @@
                 type: String,
                 required: true,
             },
+            isWaitingForResponse: {
+                type: Boolean,
+                required: true,
+            },
             buttonHeight: {
                 type: String,
                 default: '3',
@@ -26,7 +30,9 @@
         },
         methods: {
             buttonPressed() {
-                this.$emit('button-pressed', this.buttonName);
+                if (!this.isWaitingForResponse) {
+                    this.$emit('button-pressed', this.buttonName);
+                }
             }
         }
     }
@@ -43,7 +49,10 @@
         &:hover {
             cursor: pointer;
             background-color: #898888;
+        }
 
+        .disabled {
+            pointer-events: none !important;
         }
     }
 </style>

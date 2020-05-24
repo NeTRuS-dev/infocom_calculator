@@ -23,7 +23,7 @@ class Calculator extends Model
     public function __construct(Operation $operation = null)
     {
         parent::__construct();
-        if ($operation !== null) {
+        if (!is_null($operation)) {
             $this->operation = $operation;
             $this->operation->calculatorInstance = $this;
         }
@@ -34,7 +34,7 @@ class Calculator extends Model
      */
     public function execOperation(): array
     {
-        if ($this->operation !== null) {
+        if (!is_null($this->operation)) {
             return ['resultValue' => $this->operation->executeOperation()];
         } else {
             return ['resultValue' => ''];
@@ -87,14 +87,13 @@ class Calculator extends Model
     public function setMemorizedOperation(string $operation)
     {
         if (Calculator::isAllowedOperation($operation)) {
-                Yii::$app->session->set(self::$mem_operation_session_key, $operation);
-
+            Yii::$app->session->set(self::$mem_operation_session_key, $operation);
         }
     }
 
     public static function isAllowedOperation(string $operation): bool
     {
-        $reflTypesClass = new \ReflectionClass(EvalTypes::class);
-        return array_key_exists($operation, array_flip($reflTypesClass->getConstants()));
+        $reflection_types_class = new \ReflectionClass(EvalTypes::class);
+        return array_key_exists($operation, array_flip($reflection_types_class->getConstants()));
     }
 }

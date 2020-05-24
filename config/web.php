@@ -23,9 +23,22 @@ $config = [
             ]
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\redis\Cache',
+            'redis' => [
+                'hostname' => 'localhost',
+                'port' => 6379,
+                'database' => 0,
+            ]
         ],
-
+        'session' => [
+            'class' => 'yii\redis\Session',
+            'name' => 'calculator_session_id',
+            'redis' => [
+                'hostname' => 'localhost',
+                'port' => 6379,
+                'database' => 0,
+            ]
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

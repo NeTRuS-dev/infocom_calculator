@@ -4,7 +4,6 @@
 namespace app\controllers;
 
 use app\models\Calculator;
-use app\models\EvalTypes;
 use app\models\operations\BinaryOperation;
 use app\models\operations\MemoryOperation;
 use app\models\operations\UnaryOperation;
@@ -60,14 +59,12 @@ class AjaxController extends Controller
     {
         $calc = new Calculator(new BinaryOperation(Yii::$app->request->post()));
         return $calc->execOperation();
-
     }
 
     public function actionWorkWithMemory()
     {
         $calc = new Calculator(new MemoryOperation(Yii::$app->request->post()));
         return $calc->execOperation();
-
     }
 
     public function actionClearFlashMemory()
