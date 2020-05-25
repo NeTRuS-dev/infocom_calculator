@@ -38,7 +38,6 @@ class Calculator extends Model
             return ['resultValue' => $this->operation->executeOperation()];
         } else {
             return ['resultValue' => ''];
-
         }
     }
 
@@ -56,7 +55,6 @@ class Calculator extends Model
     public function unsetDeeplyMemorizedData()
     {
         Yii::$app->session->remove(self::$deep_mem_data_session_key);
-
     }
 
     public function getMemorizedData(): float

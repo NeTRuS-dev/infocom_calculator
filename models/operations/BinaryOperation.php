@@ -17,7 +17,7 @@ class BinaryOperation extends Operation
     public function __construct(array $data)
     {
         parent::__construct($data);
-        $this->rightValue = $data['rightValue'] ?? null;
+        $this->rightValue = $data['rightValue'];
 
     }
 

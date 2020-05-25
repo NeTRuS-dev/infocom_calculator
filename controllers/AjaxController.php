@@ -38,7 +38,6 @@ class AjaxController extends Controller
         ];
     }
 
-    //crutch(
     public function beforeAction($action)
     {
         $this->enableCsrfValidation = false;
@@ -72,7 +71,7 @@ class AjaxController extends Controller
         $calc = new Calculator();
         $calc->unsetMemorizedData();
         $calc->unsetMemorizedOperation();
-        if (Yii::$app->request->getQueryParam('full') !== null) {
+        if (!is_null(Yii::$app->request->get('full'))) {
             $calc->unsetDeeplyMemorizedData();
         }
     }

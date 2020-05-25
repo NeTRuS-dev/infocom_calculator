@@ -168,7 +168,7 @@
         },
         created() {
             // destroys all data in memory after reload
-            this.clearMemory(true);
+            this.clearMemory(true)
         },
         methods: {
             async unaryOperationButtonPressedHandler(data) {
@@ -183,22 +183,22 @@
             },
             async binaryOperationButtonPressedHandler(data) {
                 this.isWaitingForResponse = true
-                this.inputFromStart = true;
+                this.inputFromStart = true
                 let nestedData = {
                     operation: data,
                 }
                 if (this.previousInputWasANumber || data === 'evaluate') {
-                    this.previousInputWasANumber = false;
+                    this.previousInputWasANumber = false
                     nestedData.rightValue = this.displayValue
                 }
                 let tmp = (await this.dataProvider.receiveResponseData(binaryOperationUrl, nestedData)).resultValue
                 if (data === 'evaluate') {
                     this.displayValue = tmp;
-                    this.memorizedDisplayValues = '';
-                    this.inputFromStart = true;
+                    this.memorizedDisplayValues = ''
+                    this.inputFromStart = true
                     this.previousInputWasANumber = true
                 } else {
-                    this.memorizedDisplayValues = tmp;
+                    this.memorizedDisplayValues = tmp
                 }
                 this.isWaitingForResponse = false
             },
