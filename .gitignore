@@ -32,3 +32,4 @@ tests/_support/_generated
 
 #vagrant folder
 /.vagrant
+/Nginx_1.17_vhost.conf

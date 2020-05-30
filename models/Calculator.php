@@ -5,14 +5,14 @@ namespace app\models;
 
 use app\models\operations\Operation;
 use Yii;
-use yii\base\Model;
+use yii\base\BaseObject;
 
 /**
  * @property float $memorizedData usual calculation memory
  * @property float $deeplyMemorizedData memory for M buttons
  * @property string $memorizedOperation operation in memory
  */
-class Calculator extends Model
+class Calculator extends BaseObject
 {
     private static string $mem_data_session_key = 'memorized_value';
     private static string $deep_mem_data_session_key = 'deeply_memorized_value';
