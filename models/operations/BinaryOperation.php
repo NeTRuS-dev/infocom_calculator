@@ -5,6 +5,7 @@ namespace app\models\operations;
 
 
 use app\models\EvalTypes;
+use DivisionByZeroError;
 
 class BinaryOperation extends Operation
 {
@@ -26,7 +27,7 @@ class BinaryOperation extends Operation
         if (!$this->validate()) {
             return '';
         } else {
-            if ($this->rightValue) {
+            if (isset($this->rightValue) && $this->rightValue !== '') {
                 $tmp = strval($this->makeCalc($this->calculatorInstance->memorizedData, $this->calculatorInstance->memorizedOperation, floatval($this->rightValue)));
                 if ($this->operation === EvalTypes::evaluate) {
                     $this->calculatorInstance->unsetMemorizedOperation();
@@ -55,7 +56,11 @@ class BinaryOperation extends Operation
                 $returnValue = $left - $right;
                 break;
             case EvalTypes::divide:
-                $returnValue = $left / $right;
+                try {
+                    $returnValue = $left / $right;
+                } catch (\Throwable $e) {
+                    $returnValue = 0;
+                }
                 break;
             case EvalTypes::mod:
                 $returnValue = $left % $right;
