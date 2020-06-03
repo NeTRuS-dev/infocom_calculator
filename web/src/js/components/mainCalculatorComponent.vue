@@ -192,7 +192,7 @@
                     operation: data,
                 }
                 if (this.previousInputWasANumber || data === 'evaluate') {
-                    if (this.displayValue === '0') {
+                    if (this.displayValue === '0' && this.memorizedDisplayValues !== '') {
                         await this.clearMemory(false, 'Деление на ноль')
                         return
                     }
