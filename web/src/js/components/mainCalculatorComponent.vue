@@ -135,7 +135,7 @@
     import ButtonComponent from "@/js/components/buttonComponent";
     import {DataReceiver} from "@/js/DataReceiver";
     import {memoryOperationUrl, binaryOperationUrl, unaryOperationUrl, clearMemoryUrl} from "@/js/config";
-    import {OperationTypes} from "@/js/OperationTypes";
+    import {BinaryOperationTypes, makeUnaryOperationDescription} from "@/js/OperationTypes";
 
     export default {
         name: "mainCalculatorComponent",
@@ -146,7 +146,8 @@
                 dataProvider: new DataReceiver(),
                 inputFromStart: false,
                 previousInputWasANumber: false,
-                isWaitingForResponse: false
+                isWaitingForResponse: false,
+                madeUnaryOperation: false
             }
         },
         computed: {
@@ -158,11 +159,15 @@
                 return `${this.displayValue.slice(0, 18)}`;
             },
             computedMemorizedDisplayValues() {
-                let [leftValue, operation] = this.memorizedDisplayValues.split(' ')
-                if (leftValue && operation) {
-                    return `${leftValue} ${OperationTypes.hasOwnProperty(operation) ? OperationTypes[operation] : operation}`
+                if (!this.madeUnaryOperation) {
+                    let [leftValue, operation] = this.memorizedDisplayValues.split(' ')
+                    if (leftValue && operation) {
+                        return `${leftValue} ${BinaryOperationTypes.hasOwnProperty(operation) ? BinaryOperationTypes[operation] : operation}`
+                    } else {
+                        return ''
+                    }
                 } else {
-                    return ''
+                    return this.memorizedDisplayValues
                 }
             }
         },
@@ -173,7 +178,8 @@
         methods: {
             async unaryOperationButtonPressedHandler(data) {
                 this.isWaitingForResponse = true
-                this.inputFromStart = true;
+                this.inputFromStart = true
+                this.madeUnaryOperation = true
                 if (data === '1divx' && this.displayValue === '0') {
                     await this.clearMemory(false, 'Деление на ноль')
                     return
@@ -182,10 +188,16 @@
                     operation: data,
                     rightValue: this.displayValue
                 }
+                if (!(this.memorizedDisplayValues !== null && this.memorizedDisplayValues !== undefined && this.memorizedDisplayValues.length > 0)) {
+                    this.memorizedDisplayValues = makeUnaryOperationDescription(this.displayValue, data)
+                } else {
+                    this.madeUnaryOperation = false
+                }
                 this.displayValue = (await this.dataProvider.receiveResponseData(unaryOperationUrl, nestedData)).resultValue
                 this.isWaitingForResponse = false
             },
             async binaryOperationButtonPressedHandler(data) {
+                this.madeUnaryOperation = false
                 this.isWaitingForResponse = true
                 this.inputFromStart = true
                 let nestedData = {
@@ -211,6 +223,7 @@
                 this.isWaitingForResponse = false
             },
             async memoryOperationButtonPressedHandler(data) {
+                this.madeUnaryOperation = false
                 this.isWaitingForResponse = true
                 this.inputFromStart = true
                 let nestedData = {
@@ -237,6 +250,10 @@
                     this.previousInputWasANumber = true
                     if (this.inputFromStart) {
                         this.displayValue = ''
+                        if (this.madeUnaryOperation) {
+                            this.memorizedDisplayValues = ''
+                            this.madeUnaryOperation = false
+                        }
                         this.inputFromStart = false
                     }
                     if (number === 'reduce') {
