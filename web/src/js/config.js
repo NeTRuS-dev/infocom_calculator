@@ -1,4 +1,4 @@
-const baseUrl = 'http://calc.info'
+const baseUrl = `http://${window.location.hostname}`
 const evalUrl = `${baseUrl}/ajax/evaluate`
 export const clearMemoryUrl = `${baseUrl}/ajax/clear`
 export const unaryOperationUrl = `${evalUrl}/unary`
