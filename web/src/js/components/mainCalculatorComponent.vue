@@ -188,6 +188,10 @@
                     operation: data,
                 }
                 if (this.previousInputWasANumber || data === 'evaluate') {
+                    if (this.displayValue === '0') {
+                        await this.clearMemory(false, 'Деление на ноль')
+                        return
+                    }
                     this.previousInputWasANumber = false
                     nestedData.rightValue = this.displayValue
                 }
@@ -212,10 +216,10 @@
                 this.displayValue = (await this.dataProvider.receiveResponseData(memoryOperationUrl, nestedData)).resultValue
                 this.isWaitingForResponse = false
             },
-            async clearMemory(fullClean = false) {
+            async clearMemory(fullClean = false, newDisplayValue = '0') {
                 this.isWaitingForResponse = true
                 await this.dataProvider.receiveResponseData(`${clearMemoryUrl}${fullClean ? '?full=true' : ''}`)
-                this.displayValue = '0'
+                this.displayValue = newDisplayValue
                 this.memorizedDisplayValues = ''
                 this.inputFromStart = true
                 this.previousInputWasANumber = false
